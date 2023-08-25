@@ -1,0 +1,12 @@
+<section id="work-history">
+    <h2>Work History</h2>
+    <div *ngFor="let job of workHistory">
+      <h3>{{ job.position }}</h3>
+      <p>{{ job.company }}</p>
+      <p>{{ job.date }}</p>
+      <ul>
+        <li *ngFor="let responsibility of job.responsibilities">{{ responsibility }}</li>
+      </ul>
+    </div>
+  </section>
+  

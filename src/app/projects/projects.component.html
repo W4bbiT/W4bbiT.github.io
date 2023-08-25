@@ -1,0 +1,9 @@
+<section id="projects">
+    <h2>Projects</h2>
+    <div *ngFor="let project of projects">
+      <h3>{{ project.name }}</h3>
+      <p>{{ project.purpose }}</p>
+      <p>Tool Used: {{ project.toolUsed }}</p>
+      <a href="{{ project.url }}" target="_blank">View Project</a>
+    </div>
+  </section>

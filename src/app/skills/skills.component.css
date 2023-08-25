@@ -1,0 +1,25 @@
+
+#skills {
+    background-color: #e9ecef;
+    padding: 4rem 0;
+  }
+  
+  section{
+    display: flex;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    margin: 10px;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  li {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }

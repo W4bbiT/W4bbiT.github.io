@@ -1,0 +1,28 @@
+<section id="skills">
+    <div>
+        <h2>Software Skills</h2>
+        <ul>
+            <li *ngFor="let software of softwareSkills">{{ software }}</li>
+        </ul>
+    </div>
+    <div>
+        <h2>General Skills</h2>
+        <ul>
+            <li *ngFor="let general of generalSkills">{{ general }}</li>
+        </ul>
+    </div>
+    <div>
+        <h2>Hardware Skills</h2>
+        <ul>
+            <li *ngFor="let hardware of hardwareSkills">{{ hardware }}</li>
+        </ul>
+    </div>
+</section>
+
+<ngx-flicking [options]="{ circular: true }" [plugins]="plugins">
+    <div flicking-panel class="card-panel">1</div>
+    <div flicking-panel class="card-panel">2</div>
+    <div flicking-panel class="card-panel">3</div>
+    <span in-viewport class="flicking-arrow-prev"></span>
+    <span in-viewport class="flicking-arrow-next"></span>
+  </ngx-flicking>
