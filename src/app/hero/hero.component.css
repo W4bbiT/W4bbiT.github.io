@@ -1,25 +1,54 @@
-#hero {
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 4rem 0;
+@import "@egjs/flicking-plugins/dist/flicking-plugins.css";
+/* Global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+/* Panels */
+.grid-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+/* About Panel */
+.about-panel {
+  background-color: #303030;
+  color: white;
+}
+
+/* Skills and Projects Panel */
+.skills-projects-panel {
+  background-color: #f7f7f7;
+}
+
+/* Projects Panel */
+.projects-panel {
+  background-color: #303030;
+  color: white;
+}
+
+/* Education, Work History, and Contact Panel */
+.education-work-contact-panel {
+  background-color: #f7f7f7;
+}
+
+/* FrameGrid styles */
+.FrameGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .FrameGrid {
+    grid-template-columns: 1fr;
   }
-  
-  .content {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
+}

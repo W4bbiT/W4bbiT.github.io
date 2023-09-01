@@ -1,28 +1,101 @@
-<section id="skills">
-    <div>
-        <h2>Software Skills</h2>
-        <ul>
-            <li *ngFor="let software of softwareSkills">{{ software }}</li>
-        </ul>
+<div class="p-5 bg-pink-300 text-center h-full w-full">
+    <div class="p-5">
+        <h2 class="text-2xl font-semibold">Software Skills</h2>
+        <ngx-flicking class="p-2"
+            [options]="{}" [plugins]="plugins">
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/java.png" alt="">
+                <p class="">Java</p>    
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/angular.png" alt="">
+                <p class="">Angular</p> 
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/mysql.png" alt="">
+                <p class="">MySQL</p>
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/nodejs.png" alt="">
+                <p class="">NodeJS</p>
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/spring-boot.png" alt="">
+                <p class="">SpringBoot</p>
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/mongodb.png" alt="">
+                <p class="">MongoDB</p>
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/html.png" alt="html">
+                <p class="">HTML</p>
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/css.png" alt="">
+                <p class="">CSS</p>
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/tailwindcss.png" alt="">
+                <p class="">TailwindCSS</p>
+            </div>
+        </ngx-flicking>
     </div>
-    <div>
-        <h2>General Skills</h2>
-        <ul>
-            <li *ngFor="let general of generalSkills">{{ general }}</li>
-        </ul>
+    <div class="p-5">
+        <h2 class="text-2xl font-semibold">General Skills</h2>
+        <ngx-flicking class="p-2"
+            [options]="{ circular: true, moveType: 'snap',iOSEdgeSwipeThreshold: 30 }" [plugins]="plugins">
+            
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/maths.png" alt="">
+                <p class="px-5">Advanced Mathematical Skills</p>
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/critical-thinking.png" alt="">
+                <p class="px-5">Strong Critical Thinker</p>
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/team.png" alt="">
+                <p class="px-5">Effective Team Player</p>
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/problem-solving.png" alt="">
+                <p class="px-5">Excellent Problem Solver</p>
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/goal-oriented.png" alt="">
+                <p class="px-5">Goal-Oriented</p>
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/agile.png" alt="">
+                <p class="px-5">Agile Way of Working</p>
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/talking.png" alt="html">
+                <p class="px-5">Strong Communication Skills</p>
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/multitasking.png" alt="">
+                <p class="px-5">Great Multi-Tasker</p>
+            </div>
+        </ngx-flicking>
     </div>
-    <div>
-        <h2>Hardware Skills</h2>
-        <ul>
-            <li *ngFor="let hardware of hardwareSkills">{{ hardware }}</li>
-        </ul>
+    <div class="p-5">
+        <h2 class="text-2xl font-semibold">Hardware Skills</h2>
+        <ngx-flicking class="p-2"
+            [options]="{ circular: true, moveType: 'snap',iOSEdgeSwipeThreshold: 30 }" [plugins]="plugins">
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/circuit.png" alt="">
+                <p class="px-5">AC DC circuit design</p>
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/embedded.png" alt="">
+                <p class="px-5">Embedded systems</p>
+            </div>
+            <div class="text-center mx-20" flicking-panel>
+                <img src="../../assets/Port/binary-code.png" alt="html">
+                <p class="px-5">Distributed computing</p>
+            </div>
+        </ngx-flicking>
     </div>
-</section>
-
-<ngx-flicking [options]="{ circular: true }" [plugins]="plugins">
-    <div flicking-panel class="card-panel">1</div>
-    <div flicking-panel class="card-panel">2</div>
-    <div flicking-panel class="card-panel">3</div>
-    <span in-viewport class="flicking-arrow-prev"></span>
-    <span in-viewport class="flicking-arrow-next"></span>
-  </ngx-flicking>
+</div>

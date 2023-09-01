@@ -1,5 +1,14 @@
-<section id="education">
-    <h2>Education</h2>
-    <p>{{ education }}</p>
-  </section>
-  
+<div class="p-5 bg-lime-500 text-center h-full w-full">
+    <h2 class="text-3xl font-bold">Education</h2>
+    <div class="text-xl">
+      <h3 class="text-2xl font-semibold">{{ education.name }}</h3>
+      <div>
+        <p class=""><span class="font-semibold">Location:</span> {{ education.location }}</p>
+        <p class=""><span class="font-semibold">Course:</span> {{ education.course }}</p>
+        <p class=""><span class="font-semibold">Graduated:</span> {{ education.graduation }}</p>
+        <p class=""><span class="font-semibold">GPA:</span> {{ education.gpa }}</p>
+        <p class=""><span class="font-semibold">Info:</span> {{ education.info }}</p>
+      </div>
+    </div>
+
+</div>  

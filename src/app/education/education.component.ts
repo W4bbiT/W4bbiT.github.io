@@ -7,7 +7,7 @@ import { DataService } from '../data.service';
   styleUrls: ['./education.component.css']
 })
 export class EducationComponent {
-  education: string = '';
+  education: any;
   constructor(private data: DataService) { }
 
   ngOnInit(): void {

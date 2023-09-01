@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { DataService } from './data.service';
 import { ProjectsComponent } from './projects/projects.component';
 import { NgxFlickingModule } from '@egjs/ngx-flicking';
+import { NgxGridModule } from '@egjs/ngx-grid';
 
 @NgModule({
   declarations: [
@@ -24,12 +25,13 @@ import { NgxFlickingModule } from '@egjs/ngx-flicking';
     EducationComponent,
     WorkHistoryComponent,
     ContactComponent,
-    ProjectsComponent
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxFlickingModule
+    NgxFlickingModule,
+    NgxGridModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -1,8 +1,10 @@
-<section id="about">
-    <h2>About Me</h2>
-    <p>{{ summary }}</p>
-    <p>Location: {{ location }}</p>
-    <p>Phone: {{ phone }}</p>
-    <p>Email: {{ email }}</p>
-  </section>
-  
+<div class="p-5 bg-red-400 h-full w-full text-center">
+  <h2 class="text-3xl font-bold">{{name}}</h2>
+  <div class="text-xl">
+    <p class="font-semibold">{{title}}</p>
+    <p><span class="font-semibold"></span>{{ summary }}</p>
+    <p><span class="font-semibold">Location:</span>{{ location }}</p>
+    <p><span class="font-semibold">Phone: </span>{{ phone }}</p>
+    <p><span class="font-semibold">Email: </span>{{ email }}</p>
+  </div>
+</div>

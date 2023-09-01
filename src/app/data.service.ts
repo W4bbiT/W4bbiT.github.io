@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -28,21 +29,15 @@ export class DataService {
     return 'azarmohamed96@yahoo.com';
   }
 
-  getSoftwareSkills(): string[] {
-    return ['Java', 'Angular', 'MySQL', 'NodeJS', 'HTML', 'CSS', 'Microsoft Office'];
-  }
-
-  getGeneralSkills(): string[] {
-    return ['Advanced Mathematical Skills', 'Strong Critical Thinker', 'Effective Team Player', 'Excellent Problem Solver',
-      'Detail-Oriented', 'Agile Way of Working', 'Strong Communication Skills', 'Great Multi-Tasker'];
-  }
-
-  getHardwareSkills(): string[] {
-    return ['AC DC circuit design', 'Embedded systems', 'Distributed computing'];
-  }
-
-  getEducation(): string {
-    return 'DeVry University, Chicago, IL\nBachelor of Science in Computer Engineering Technology\nGPA: 3.29/4.0\nGraduated: 2021\nThe Computer Engineering Technology degree program is accredited by The Engineering Technology Accreditation Commission of ABET (ETAC of ABET) www.abet.org. ETAC of ABET promotes technical education excellence by offering programmatic accreditation to institutions that meet their quality standards.';
+  getEducation(): any {
+    return {
+      name:'DeVry University',
+      location:'Chicago, IL',
+      gpa: '3.29/4.0',
+      graduation: '01/2021',
+      course:'Bachelor of Science in Computer Engineering Technology',
+      info:'The Computer Engineering Technology degree program is accredited by The Engineering Technology Accreditation Commission of ABET (ETAC of ABET) www.abet.org. ETAC of ABET promotes technical education excellence by offering programmatic accreditation to institutions that meet their quality standards.',
+    }
   }
 
   getWorkHistory(): any[] {

@@ -1,9 +1,27 @@
-<section id="projects">
-    <h2>Projects</h2>
-    <div *ngFor="let project of projects">
-      <h3>{{ project.name }}</h3>
-      <p>{{ project.purpose }}</p>
-      <p>Tool Used: {{ project.toolUsed }}</p>
-      <a href="{{ project.url }}" target="_blank">View Project</a>
-    </div>
-  </section>
+<div class="p-5 bg-orange-300 text-center">
+    <h2 class="text-3xl font-bold">Projects</h2>
+    <ngx-flicking [options]="{panelsPerView:1, align: 'prev'}">
+      <div class="text-xl" flicking-panel *ngFor="let project of projects">
+        <h3 class="text-2xl font-semibold">{{ project.name }}</h3>
+        <p><span class="font-semibold">Purpose: </span>{{ project.purpose }}</p>
+        <div *ngIf="project.name == 'Weather App'" class="font-semibold flex justify-center items-center">
+          Tools Used:
+          <img src="../../assets/Port/angular.png" alt="">
+          <img src="../../assets/Port/html.png" alt="">
+          <img src="../../assets/Port/css.png" alt="">
+          <img src="../../assets/Port/api.png" alt="public api">
+        </div>
+        <div *ngIf="project.name == 'Azar: Active Wear'" class="font-semibold flex justify-center items-center">
+          Tools Used:
+          <img src="../../assets/Port/angular.png" alt="">
+          <img src="../../assets/Port/nodejs.png" alt="">
+          <img src="../../assets/Port/mongodb.png" alt="">
+          <img src="../../assets/Port/html.png" alt="">
+          <img src="../../assets/Port/tailwindcss.png" alt="">
+          <img src="../../assets/Port/css.png" alt="">
+
+        </div>
+        <a href="{{ project.url }}" target="_blank">View Project</a>
+      </div>
+    </ngx-flicking>
+  </div>
