@@ -1,29 +1,104 @@
-<header>
-    <h1>{{ fullName }}</h1>
-    <p>{{ title }}</p>
-    <ul class="flex justify-between">
-      <li>
-        <a routerLink="/">Home</a>
-      </li>
-      <li>
-        <a routerLink="/about">About</a>
-      </li>
-      <li>
-        <a routerLink="/education">Education</a>
-      </li>
-      <li>
-        <a routerLink="/projects">Projects</a>
-      </li>
-      <li>
-        <a routerLink="/skills">Skills</a>
-      </li>
-      <li>
-        <a routerLink="/work-history">Experience</a>
-      </li>
-      <li>
-        <a routerLink="/contact">Contact</a>
-      </li>
+<header class="p-5">
+  <div class="flex gap-5 justify-evenly">
+    <div class="text-5xl font-black font-serif">
+      <a routerLink="/">Azar 
+        Ansar</a>
+    </div>
+    <div class="text-lg">
+      <div class="flex flex-wrap">
+        <div>
+          <div clickOutside (clickOutside)="clickedOutsideAbout()" class="ml-3" >
+            <div class=""
+              (click)="toggleAbout()">
+              About
+            </div>
+            <div
+              class="absolute mt-5 p-5 rounded-lg dropDownAbout z-30 origin-top"
+              *ngIf="isAboutOpened">
+              <div class="absolute triangle-up"></div>
+              <app-about></app-about>
+            </div>
+          </div>
+        </div>
 
-    </ul>
+        <div>
+          <div clickOutside (clickOutside)="clickedOutsideEducation()" class="ml-3" >
+            <div class=""
+              (click)="toggleEducation()">
+              Education
+            </div>
+            <div
+              class="absolute mt-5 p-5 rounded-lg dropDownEducation z-30 origin-top"
+              *ngIf="isEducationOpened">
+              <div class="absolute triangle-up"></div>
+              <app-education></app-education>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div clickOutside (clickOutside)="clickedOutsideProjects()" class="ml-3" >
+            <div class=""
+              (click)="toggleProjects()">
+              Projects
+            </div>
+            <div
+              class="absolute mt-5 p-5 rounded-lg dropDownProjects z-30 origin-top"
+              *ngIf="isProjectsOpened">
+              <div class="absolute triangle-up"></div>
+              <app-projects></app-projects>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div clickOutside (clickOutside)="clickedOutsideSkills()" class="ml-3" >
+            <div class=""
+              (click)="toggleSkills()">
+              Skills
+            </div>
+            <div
+              class="absolute mt-5 p-5 rounded-lg dropDownSkills z-30 origin-top"
+              *ngIf="isSkillsOpened">
+              <div class="absolute triangle-up"></div>
+              <app-skills></app-skills>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div clickOutside (clickOutside)="clickedOutsideExperience()" class="ml-3" >
+            <div class=""
+              (click)="toggleExperience()">
+              Experience
+            </div>
+            <div
+              class="absolute mt-5 p-5 rounded-lg dropDownExperience z-30 origin-top"
+              *ngIf="isExperienceOpened">
+              <div class="absolute triangle-up"></div>
+              <app-work-history></app-work-history>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div clickOutside (clickOutside)="clickedOutsideContact()" class="ml-3" >
+            <div class=""
+              (click)="toggleContact()">
+              Contact
+            </div>
+            <div
+              class="absolute mt-5 p-5 rounded-lg dropDownContact z-30 origin-top"
+              *ngIf="isContactOpened">
+              <div class="absolute triangle-up"></div>
+              <app-contact></app-contact>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   </header>
   
+
+

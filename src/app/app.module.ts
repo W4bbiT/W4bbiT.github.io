@@ -14,6 +14,7 @@ import { DataService } from './data.service';
 import { ProjectsComponent } from './projects/projects.component';
 import { NgxFlickingModule } from '@egjs/ngx-flicking';
 import { NgxGridModule } from '@egjs/ngx-grid';
+import { ClickOutsideDirective } from './directives/click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { NgxGridModule } from '@egjs/ngx-grid';
     WorkHistoryComponent,
     ContactComponent,
     ProjectsComponent,
+    ClickOutsideDirective,
   ],
   imports: [
     BrowserModule,

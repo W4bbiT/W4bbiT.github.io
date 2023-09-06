@@ -10,7 +10,7 @@ export class DataService {
   }
 
   getTitle(): string {
-    return 'Software Engineer';
+    return 'Full-Stack Software Engineer';
   }
 
   getSummary(): string {

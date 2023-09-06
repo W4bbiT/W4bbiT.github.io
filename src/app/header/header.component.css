@@ -1,17 +1,118 @@
+.dropDownAbout {
+  -webkit-animation-name: drop-animation;
+  animation-name: drop-animation;
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  background: rgba(50, 50, 50, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  margin-left: -15rem;
+  width: 38rem;
+}
 
-header {
-    background-color: #34495e;
-    color: white;
-    text-align: center;
-    padding: 2rem;
+.dropDownEducation {
+  -webkit-animation-name: drop-animation;
+  animation-name: drop-animation;
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  background: rgba(50, 50, 50, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  margin-left: -19rem;
+  width: 38rem;
+}
+.dropDownProjects {
+  -webkit-animation-name: drop-animation;
+  animation-name: drop-animation;
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  background: rgba(50, 50, 50, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  margin-left: -25rem;
+  width: 38rem;
+}
+.dropDownSkills {
+  -webkit-animation-name: drop-animation;
+  animation-name: drop-animation;
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  background: rgba(50, 50, 50, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  margin-left: -30rem;
+  width: 38rem;
+}
+.dropDownExperience {
+  -webkit-animation-name: drop-animation;
+  animation-name: drop-animation;
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  background: rgba(50, 50, 50, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  margin-left: -15rem;
+  width: 38rem;
+}
+.dropDownContact {
+  -webkit-animation-name: drop-animation;
+  animation-name: drop-animation;
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  background: rgba(50, 50, 50, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  margin-left: -21rem;
+  width: 38rem;
+}
+
+
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid rgb(0, 0, 0);
+  transform: translate(10px, -31px);
+}
+
+@-webkit-keyframes drop-animation {
+  from {
+      transform: scaleY(0);
   }
-  
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+
+  80% {
+      transform: scaleY(1.1);
   }
-  
-  p {
-    font-size: 1.2rem;
+
+  to {
+      transform: scaleY(1);
   }
-  
+}
+
+@keyframes drop-animation {
+  from {
+      transform: scaleY(0);
+  }
+
+  80% {
+      transform: scaleY(1.1);
+  }
+
+  to {
+      transform: scaleY(1);
+  }
+}
