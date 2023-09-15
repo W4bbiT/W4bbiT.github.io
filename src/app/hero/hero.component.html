@@ -1,9 +1,65 @@
 <div class="relative h-screen w-screen">
-  <div class="title absolute border-black top-80 left-10 z-20 bg-white p-5 w-2/3 -skew-x-12 bg-opacity-90 rounded-xl">
+  <div class="title absolute border-black top-80 left-10 z-20 bg-white p-5 w-2/3 -skew-x-12 bg-opacity-70 rounded-xl">
     <h3 class="text-2xl font-bold">{{title}}</h3>
-    <p class="text-lg">"Crafting Seamless Experiences from Front to Back. Full Stack Engineer with a Passion for
+    <p class="text-lg font-semibold">"Crafting Seamless Experiences from Front to Back. Full Stack Engineer with a Passion for
       Precision in Front-End and Back-End Development. Let's Create Tomorrow's Digital World."</p>
   </div>
   <img class="azar absolute right-0 max-w-2xl z-10" src="../../assets/azar.png">
   <div></div>
 </div>
+
+<div class="about"
+appObserveVisibility
+(isIntersecting)="isIntersecting=$event"
+(isVisible)="onVisibilityChange($event)"
+(isCutting)="isCuttingChange($event)"
+[@myAnimation]="animationState">
+  <app-about></app-about>
+</div>
+
+<div class="education"
+appObserveVisibility
+(isIntersecting)="isIntersecting=$event"
+(isVisible)="onVisibilityChange($event)"
+(isCutting)="isCuttingChange($event)"
+[@myAnimation]="animationState">
+<app-education></app-education>
+</div>
+
+<div class="projects"
+appObserveVisibility
+(isIntersecting)="isIntersecting=$event"
+(isVisible)="onVisibilityChange($event)"
+(isCutting)="isCuttingChange($event)"
+[@myAnimation]="animationState">
+<app-projects></app-projects>
+</div>
+
+<div class="skills"
+appObserveVisibility
+(isIntersecting)="isIntersecting=$event"
+(isVisible)="onVisibilityChange($event)"
+(isCutting)="isCuttingChange($event)"
+[@myAnimation]="animationState">
+<app-skills></app-skills>
+</div>
+
+<div class="experience"
+appObserveVisibility
+(isIntersecting)="isIntersecting=$event"
+(isVisible)="onVisibilityChange($event)"
+(isCutting)="isCuttingChange($event)"
+[@myAnimation]="animationState">
+<app-work-history></app-work-history>
+</div>
+
+<div class="contact"
+appObserveVisibility
+(isIntersecting)="isIntersecting=$event"
+(isVisible)="onVisibilityChange($event)"
+(isCutting)="isCuttingChange($event)"
+[@myAnimation]="animationState">
+  <app-contact></app-contact>
+</div>
+
+

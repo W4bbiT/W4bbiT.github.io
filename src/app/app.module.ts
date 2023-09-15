@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { NgxFlickingModule } from '@egjs/ngx-flicking';
 import { NgxGridModule } from '@egjs/ngx-grid';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
+import { ObserveVisibilityDirective } from './directives/observe-visibility.directive';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,11 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
     ContactComponent,
     ProjectsComponent,
     ClickOutsideDirective,
+    ObserveVisibilityDirective,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     NgxFlickingModule,
     NgxGridModule

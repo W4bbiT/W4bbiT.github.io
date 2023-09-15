@@ -1,3 +1,5 @@
+
+
 .dropDownAbout {
   -webkit-animation-name: drop-animation;
   animation-name: drop-animation;
@@ -8,7 +10,7 @@
   background: rgba(50, 50, 50, 0.5);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  margin-left: -15rem;
+  transform: translateX(-15rem);
   width: 38rem;
 }
 
@@ -79,15 +81,61 @@
 }
 
 
-.triangle-up {
+.triangle-about {
   width: 0;
   height: 0;
   border-radius: 50%;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
   border-bottom: 15px solid rgb(0, 0, 0);
-  transform: translate(10px, -31px);
+  transform: translate(230px, -31px);
 }
+.triangle-education {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid rgb(0, 0, 0);
+  transform: translate(310px, -31px);
+}
+.triangle-projects {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid rgb(0, 0, 0);
+  transform: translate(400px, -31px);
+}
+.triangle-skills {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid rgb(0, 0, 0);
+  transform: translate(465px, -31px);
+}
+.triangle-experience {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid rgb(0, 0, 0);
+  transform: translate(250px, -31px);
+}
+.triangle-contact {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid rgb(0, 0, 0);
+  transform: translate(335px, -31px);
+}
+
 
 @-webkit-keyframes drop-animation {
   from {

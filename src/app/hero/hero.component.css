@@ -1,1 +1,58 @@
 @import "@egjs/flicking-plugins/dist/flicking-plugins.css";
+
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+}
+
+.about {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.education {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.projects {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.skills {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.experience {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.contact {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.visible {
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+div[myAnimation] {
+    transition: opacity 2000ms ease-in-out, transform 2000ms ease-in-out;
+  }
+  
+div[myAnimation="initial"] { 
+    opacity: 0;
+    transform: translateY(2000px);
+}
+
+div[myAnimation="final"] { 
+    opacity: 1;
+    transform: translateY(0);
+}
