@@ -10,7 +10,7 @@ import { combineLatest, Observable, Subject, takeUntil } from 'rxjs';
  * @continuous - we will constantly emit on at least 1% change, for this we use thresholds of 0.01 increments
  *
  * Usage:
- * <div appIntersectionObserver
+ * <div appObserveVisibility
  *      (isIntersecting)="isIntersecting=$event"
  *      (isVisible)="isVisible=$event"
  *      (intersectionRatio)="onIntersectionRatioChange($event)"

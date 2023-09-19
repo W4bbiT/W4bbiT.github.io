@@ -1,20 +1,25 @@
-<header class="p-5 text-black">
+<header class="p-5">
   <div class="flex gap-5 justify-evenly">
-    <div class="text-5xl font-black font-serif">
-      <a routerLink="/">Azar 
-        Ansar</a>
+    <div>
+      <h1><span class="font-serif font-black">Azar Ansar</span></h1>
+
+      <div class="blobs_1"></div>
+      <div class="blobs_2"></div>
+      <div class="blobs_3"></div>
+      <div class="blobs_4"></div>
+      <div class="blobs_5"></div>
+      <div class="blobs_6"></div>
+      <div class="blobs_7"></div>
     </div>
+
     <div class="text-lg">
       <div class="flex flex-wrap">
         <div class="active:bg-green-600">
-          <div clickOutside (clickOutside)="clickedOutsideAbout()" class="ml-3" >
-            <div class=""
-              (click)="toggleAbout()">
+          <div clickOutside (clickOutside)="clickedOutsideAbout()" class="ml-3">
+            <div class="" (click)="toggleAbout()">
               About
             </div>
-            <div
-              class="absolute mt-5 p-5 rounded-lg dropDownAbout z-30 origin-top"
-              *ngIf="isAboutOpened">
+            <div class="absolute mt-5 p-5 rounded-lg dropDownAbout z-30 origin-top" *ngIf="isAboutOpened">
               <div class="absolute triangle-about"></div>
               <app-about></app-about>
             </div>
@@ -22,14 +27,11 @@
         </div>
 
         <div class="active:bg-green-600">
-          <div clickOutside (clickOutside)="clickedOutsideEducation()" class="ml-3" >
-            <div class=""
-              (click)="toggleEducation()">
+          <div clickOutside (clickOutside)="clickedOutsideEducation()" class="ml-3">
+            <div class="" (click)="toggleEducation()">
               Education
             </div>
-            <div
-              class="absolute mt-5 p-5 rounded-lg dropDownEducation z-30 origin-top"
-              *ngIf="isEducationOpened">
+            <div class="absolute mt-5 p-5 rounded-lg dropDownEducation z-30 origin-top" *ngIf="isEducationOpened">
               <div class="absolute triangle-education"></div>
               <app-education></app-education>
             </div>
@@ -37,14 +39,11 @@
         </div>
 
         <div class="active:bg-green-600">
-          <div clickOutside (clickOutside)="clickedOutsideProjects()" class="ml-3" >
-            <div class=""
-              (click)="toggleProjects()">
+          <div clickOutside (clickOutside)="clickedOutsideProjects()" class="ml-3">
+            <div class="" (click)="toggleProjects()">
               Projects
             </div>
-            <div
-              class="absolute mt-5 p-5 rounded-lg dropDownProjects z-30 origin-top"
-              *ngIf="isProjectsOpened">
+            <div class="absolute mt-5 p-5 rounded-lg dropDownProjects z-30 origin-top" *ngIf="isProjectsOpened">
               <div class="absolute triangle-projects"></div>
               <app-projects></app-projects>
             </div>
@@ -52,14 +51,11 @@
         </div>
 
         <div class="active:bg-green-600">
-          <div clickOutside (clickOutside)="clickedOutsideSkills()" class="ml-3" >
-            <div class=""
-              (click)="toggleSkills()">
+          <div clickOutside (clickOutside)="clickedOutsideSkills()" class="ml-3">
+            <div class="" (click)="toggleSkills()">
               Skills
             </div>
-            <div
-              class="absolute mt-5 p-5 rounded-lg dropDownSkills z-30 origin-top"
-              *ngIf="isSkillsOpened">
+            <div class="absolute mt-5 p-5 rounded-lg dropDownSkills z-30 origin-top" *ngIf="isSkillsOpened">
               <div class="absolute triangle-skills"></div>
               <app-skills></app-skills>
             </div>
@@ -67,14 +63,11 @@
         </div>
 
         <div class="active:bg-green-600">
-          <div clickOutside (clickOutside)="clickedOutsideExperience()" class="ml-3" >
-            <div class=""
-              (click)="toggleExperience()">
+          <div clickOutside (clickOutside)="clickedOutsideExperience()" class="ml-3">
+            <div class="" (click)="toggleExperience()">
               Experience
             </div>
-            <div
-              class="absolute mt-5 p-5 rounded-lg dropDownExperience z-30 origin-top"
-              *ngIf="isExperienceOpened">
+            <div class="absolute mt-5 p-5 rounded-lg dropDownExperience z-30 origin-top" *ngIf="isExperienceOpened">
               <div class="absolute triangle-experience"></div>
               <app-work-history></app-work-history>
             </div>
@@ -82,14 +75,11 @@
         </div>
 
         <div class="active:bg-green-600">
-          <div clickOutside (clickOutside)="clickedOutsideContact()" class="ml-3" >
-            <div class=""
-              (click)="toggleContact()">
+          <div clickOutside (clickOutside)="clickedOutsideContact()" class="ml-3">
+            <div class="" (click)="toggleContact()">
               Contact
             </div>
-            <div
-              class="absolute mt-5 p-5 rounded-lg dropDownContact z-30 origin-top"
-              *ngIf="isContactOpened">
+            <div class="absolute mt-5 p-5 rounded-lg dropDownContact z-30 origin-top" *ngIf="isContactOpened">
               <div class="absolute triangle-contact"></div>
               <app-contact></app-contact>
             </div>
@@ -98,7 +88,4 @@
       </div>
     </div>
   </div>
-  </header>
-  
-
-
+</header>
