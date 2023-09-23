@@ -1,5 +1,4 @@
 @import "@egjs/flicking-plugins/dist/flicking-plugins.css";
-
 @font-face {
     font-family: SpecialElite;
     src: url("../../assets/font/SpecialElite-Regular.ttf") format("truetype");
@@ -8,9 +7,6 @@
 .xp{
     font-family: SpecialElite;
 }
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
-
 
 .square {
     position: relative;
