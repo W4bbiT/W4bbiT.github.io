@@ -23,11 +23,11 @@ export class ObserveVisibilityDirective implements OnDestroy, AfterViewInit {
   @Input() root: HTMLElement | null = null;
   @Input() rootMargin = '0px 0px 0px 0px';
   @Input() continuous = false;
-
   @Output() isIntersecting = new EventEmitter<boolean>();
   @Output() isVisible = new EventEmitter<boolean>();
   @Output() isCutting = new EventEmitter<boolean>();
   @Output() intersectionRatio = new EventEmitter<number>();
+  @Output() sectionInView = new EventEmitter<string>();
 
   @Inject(DOCUMENT) private readonly document: Document | undefined;
   private destroy$ = new Subject<void>();
@@ -56,23 +56,19 @@ export class ObserveVisibilityDirective implements OnDestroy, AfterViewInit {
         } else {
           this.isVisible.emit(false);
         }
-
         // When element is "in the user's view"
         if (intersecting.isIntersecting) {
+          this.sectionInView.emit(this.element.nativeElement.id);
+          this.intersectionRatio.emit(Math.floor(intersecting.intersectionRatio * 100));
           this.isIntersecting.emit(true);
         } else {
           this.isIntersecting.emit(false);
         }
-
         // When element is actively "cutting" the edge of viewport
         if (intersecting.isIntersecting && visible.intersectionRatio < 1) {
           this.isCutting.emit(true);
         } else {
           this.isCutting.emit(false);
-        }
-
-        if (intersecting.isIntersecting) {
-          this.intersectionRatio.emit(Math.floor(intersecting.intersectionRatio * 100))
         }
       });
   }

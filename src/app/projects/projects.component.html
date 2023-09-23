@@ -1,6 +1,6 @@
 <div class="p-5 text-center">
-    <h2 class="text-3xl font-bold">Projects</h2>
-    <ngx-flicking [options]="{circular: true,panelsPerView:1}">
+    <h2 class="text-3xl font-bold block">Projects</h2>
+    <ngx-flicking class="flex justify-center text-center items-center" [options]="{circular: true,panelsPerView:1}" [plugins]="plugins">
       <div class="text-xl" flicking-panel *ngFor="let project of projects">
         <h3 class="text-2xl font-semibold">{{ project.name }}</h3>
         <p><span class="font-semibold">Purpose: </span>{{ project.purpose }}</p>

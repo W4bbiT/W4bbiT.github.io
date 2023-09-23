@@ -8,7 +8,6 @@ import { DataService } from '../data.service';
 })
 export class ContactComponent implements OnInit{
   address: string= "";
-  phoneNumber: string = "";
   email: string = "";
 
   constructor(
@@ -19,7 +18,6 @@ export class ContactComponent implements OnInit{
 
   ngOnInit(): void {
       this.address = this.data.getLocation();
-      this.phoneNumber = this.data.getPhone();
       this.email = this.data.getEmail();
   }
 

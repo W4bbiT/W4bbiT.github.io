@@ -1,6 +1,9 @@
-import { Component, OnInit, AfterViewInit, ElementRef, Input, Renderer2, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, Input, Renderer2, ViewChild, OnDestroy, EventEmitter, Output } from '@angular/core';
+import { ViewportScroller } from "@angular/common";
 import { DataService } from '../data.service';
 import { animate, state, style, transition, trigger, keyframes } from '@angular/animations';
+import { Router } from '@angular/router';
+import { Subscription, debounceTime, fromEvent } from 'rxjs';
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
@@ -16,31 +19,29 @@ import { animate, state, style, transition, trigger, keyframes } from '@angular/
         opacity: 1,
       })),
       state('SlideFromLeft', style({
-        transform: 'translateX(-100%) translateZ(-50px)',
-        opacity: 0,
+        opacity: 0.4,
       })),
       state('SlideFromRight', style({
-        transform: 'translateX(100%) translateZ(-50px)',
-        opacity: 0,
+        opacity: 0.4,
       })),
       transition('* => Left', [
-        animate('800ms 300ms ease-in-out', keyframes([
-          style({ opacity: 0, transform: 'scale(0)', offset: 0 }),
-          style({ opacity: 0.5, transform: 'scale(1.1)', offset: 0.7 }),
+        animate('700ms 500ms ease-in-out', keyframes([
+          style({ opacity: 0.4, transform: 'scale(1)', offset: 0 }),
+          style({ opacity: 0.8, transform: 'scale(1.05)', offset: 0.5 }),
           style({ opacity: 1, transform: 'scale(1)', offset: 1.0 })
         ]))
       ]),
       transition('* => Right', [
-        animate('800ms 300ms ease-in-out', keyframes([
-          style({ opacity: 0, transform: 'scale(0)', offset: 0 }),
-          style({ opacity: 0.5, transform: 'scale(1.1)', offset: 0.7 }),
+        animate('700ms 500ms ease-in-out', keyframes([
+          style({ opacity: 0.4, transform: 'scale(1)', offset: 0 }),
+          style({ opacity: 0.8, transform: 'scale(1.1)', offset: 0.5 }),
           style({ opacity: 1, transform: 'scale(1)', offset: 1.0 })
         ]))
       ])
     ]),
   ]
 })
-export class HeroComponent implements OnInit,AfterViewInit {
+export class HeroComponent implements OnInit, AfterViewInit {
   @ViewChild("textElement", { static: true }) textElement!: ElementRef;
   @ViewChild("blinkElement", { static: true }) blinkElement!: ElementRef;
   @Input() wordArray: string[] = [
@@ -54,7 +55,7 @@ export class HeroComponent implements OnInit,AfterViewInit {
     " Git",
   ];
   textColor = "black";
-  fontSize = "30px";
+  fontSize = "40px";
   blinkWidth = "2px";
   typingSpeedMilliseconds = 300;
   deleteSpeedMilliseconds = 100;
@@ -73,11 +74,7 @@ export class HeroComponent implements OnInit,AfterViewInit {
   location: string = '';
   phone: string = '';
   email: string = '';
-  frame = [[1, 1, 2, 2], [1, 1, 2, 2], [4, 4, 4, 5]];
-  rectSize = 400;
-  useFrameFill = false;
   gap = 2;
-  align = 'justify' as const;
 
   isIntersecting: boolean = false;
   isVisible: boolean = false;
@@ -88,22 +85,24 @@ export class HeroComponent implements OnInit,AfterViewInit {
   experienceIsCutting: boolean = false;
   contactIsCutting: boolean = false;
 
-
   constructor(private dataService: DataService,
-    private renderer: Renderer2) { }
+    private renderer: Renderer2,
+    private scroller: ViewportScroller) { }
 
   ngOnInit(): void {
     this.fullName = this.dataService.getFullName();
     this.title = this.dataService.getTitle();
     this.summary = this.dataService.getSummary();
     this.location = this.dataService.getLocation();
-    this.phone = this.dataService.getPhone();
     this.email = this.dataService.getEmail();
   }
+
   ngAfterViewInit(): void {
     this.initVariables();
     this.typingEffect();
+
   }
+
   AboutCutting(event: boolean) {
     this.aboutIsCutting = event;
     if (this.aboutIsCutting) {
@@ -125,7 +124,7 @@ export class HeroComponent implements OnInit,AfterViewInit {
   SkillsCutting(event: boolean) {
     this.skillsIsCutting = event;
     if (this.skillsIsCutting) {
-      this.SkillsState = 'Right';
+      this.SkillsState = 'Right'
     }
   }
   ExperienceCutting(event: boolean) {
@@ -138,7 +137,7 @@ export class HeroComponent implements OnInit,AfterViewInit {
     this.contactIsCutting = event;
     if (this.contactIsCutting) {
       this.ContactState = 'Right';
-    } 
+    }
   }
 
   private initVariables(): void {
@@ -194,10 +193,30 @@ export class HeroComponent implements OnInit,AfterViewInit {
       } else {
         this.i = this.wordArray.length > this.i + 1 ? this.i + 1 : 0;
         this.typingEffect();
-        return; 
+        return;
       }
       setTimeout(loopDeleting, this.deleteSpeedMilliseconds);
     };
     loopDeleting();
+  }
+
+  toAbout() {
+    this.scroller.scrollToAnchor("about");
+  }
+  toEducation() {
+    this.scroller.scrollToAnchor("education");
+  }
+  toProjects() {
+    this.scroller.scrollToAnchor("projects");
+  }
+  toSkills() {
+    this.scroller.scrollToAnchor("skills");
+  }
+  toExperience() {
+    this.scroller.scrollToAnchor("experience");
+  }
+  toContact() {
+    this.scroller.scrollToAnchor("contact");
+
   }
 }

@@ -1,71 +1,71 @@
-<div class="relative h-screen w-screen">
-  <div class="absolute border-black top-40 md:left-1/4 z-20 p-5 w-2/3 rounded-xl">
+
+<section id="home" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
+(isCutting)="AboutCutting($event)" class="relative w-screen py-40 mb-60">
+  <div class="Iam absolute top-20 left-1/4 z-20 w-2/3">
     <div class="w-72">
-        <p class="title text-2xl">I am a Software Engineer with experience in </p>
-        <p #textElement class="xp text"></p>
-        <p #blinkElement class="xp text blink"></p>
+      <div class="square heroTitle">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="content">
+          <p class="title text-2xl">I am a Software Engineer with experience in </p>
+          <p #textElement class="xp text text-red-500"></p>
+          <p #blinkElement class="xp blink text blink text-red-500"></p>
+        </div>
       </div>
+    </div>
   </div>
-  <img class="azar absolute right-0 max-w-2xl z-10" src="../../assets/azar.png">
-  <div></div>
-</div>
+</section>
 
-<div class="about" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
+<section class="py-40 bg-gray-300" id="about" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
   (isCutting)="AboutCutting($event)" [@HeroAnimations]="AboutState">
-  <app-about class="animated-section"></app-about>
-</div>
+  <app-about></app-about>
+</section>
 
-<section class="education" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
+<section class="py-40" id="education" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
   (isCutting)="EducationCutting($event)" [@HeroAnimations]="EducationState">
-  <app-education class="animated-section"></app-education>
+  <app-education></app-education>
 </section>
 
-<section class="projects" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
+<section class="py-40 bg-gray-300" id="projects" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
   (isCutting)="ProjectsCutting($event)" [@HeroAnimations]="ProjectsState">
-  <app-projects class="animated-section"></app-projects>
+  <app-projects></app-projects>
 </section>
 
-<section class="skills" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
+<section class="py-40" id="skills" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
   (isCutting)="SkillsCutting($event)" [@HeroAnimations]="SkillsState">
-  <app-skills class="animated-section"></app-skills>
+  <app-skills></app-skills>
 </section>
 
-<section class="experience" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
+<section class="py-40 bg-gray-300" id="experience" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
   (isCutting)="ExperienceCutting($event)" [@HeroAnimations]="ExperienceState">
   <app-work-history></app-work-history>
 </section>
 
-<section class="contact" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
+<section class="py-40" id="contact" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
   (isCutting)="ContactCutting($event)" [@HeroAnimations]="ContactState">
-  <app-contact class="animated-section"></app-contact>
+  <app-contact></app-contact>
   <div class="flex justify-center p-5">
-    <div class="square linkedin">
-      <span></span>
-      <span></span>
-      <span></span>
-      <div class="content">
-          <h2>
-              LinkedIn
-          </h2>
-          <p>This is where I network and build my professional portfolio</p>
-          <a href="https://www.linkedin.com/in/azar-ansar-41a133100/" target="_blank">Azar Ansar</a>
-      </div>
+    <div class="w-96">
+      <h2>
+        LinkedIn
+      </h2>
+      <p>This is where I network and build my professional portfolio</p>
+      <a class="text-red-500" href="https://www.linkedin.com/in/azar-ansar-41a133100/" target="_blank">Azar Ansar</a>
     </div>
-    
-    <div class="square github">
-      <span></span>
-      <span></span>
-      <span></span>
-      <div class="content">
-          <h2>
-              Github
-          </h2>
-          <p>This is where I share code and work on projects</p>
-          <a href="https://github.com/W4bbiT" target="_blank">W4bbiT</a>
-      </div>
+
+    <div class="w-96">
+      <h2>
+        Github
+      </h2>
+      <p>This is where I share code and work on projects</p>
+      <a class="text-red-500" href="https://github.com/W4bbiT" target="_blank">W4bbiT</a>
     </div>
   </div>
-  
+
 </section>
 
 
+<footer class="bg-gray-800 text-white flex justify-center text-center p-5 py-10">
+  This website is created with <span class="text-red-500 mx-2">love</span> by Azar
+</footer>

@@ -1,259 +1,124 @@
 
-
-.dropDownAbout {
-  -webkit-animation-name: drop-animation;
-  animation-name: drop-animation;
-  -webkit-animation-duration: 300ms;
-  animation-duration: 300ms;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  background: rgba(50, 50, 50, 0.5);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  transform: translateX(-15rem);
-  width: 38rem;
+.glass {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  scroll-padding: -30rem;
 }
 
-.dropDownEducation {
-  -webkit-animation-name: drop-animation;
-  animation-name: drop-animation;
-  -webkit-animation-duration: 300ms;
-  animation-duration: 300ms;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  background: rgba(50, 50, 50, 0.5);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  margin-left: -19rem;
-  width: 38rem;
-}
-.dropDownProjects {
-  -webkit-animation-name: drop-animation;
-  animation-name: drop-animation;
-  -webkit-animation-duration: 300ms;
-  animation-duration: 300ms;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  background: rgba(50, 50, 50, 0.5);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  margin-left: -25rem;
-  width: 38rem;
-}
-.dropDownSkills {
-  -webkit-animation-name: drop-animation;
-  animation-name: drop-animation;
-  -webkit-animation-duration: 300ms;
-  animation-duration: 300ms;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  background: rgba(50, 50, 50, 0.5);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  margin-left: -30rem;
-  width: 38rem;
-}
-.dropDownExperience {
-  -webkit-animation-name: drop-animation;
-  animation-name: drop-animation;
-  -webkit-animation-duration: 300ms;
-  animation-duration: 300ms;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  background: rgba(50, 50, 50, 0.5);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  margin-left: -15rem;
-  width: 38rem;
-}
-.dropDownContact {
-  -webkit-animation-name: drop-animation;
-  animation-name: drop-animation;
-  -webkit-animation-duration: 300ms;
-  animation-duration: 300ms;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  background: rgba(50, 50, 50, 0.5);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  margin-left: -21rem;
-  width: 38rem;
+.square {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.triangle-about {
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid rgb(0, 0, 0);
-  transform: translate(230px, -31px);
+.square span:nth-child(1) {
+  position: absolute;
+  top: 1/2;
+  left: 1/2;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 32% 58% 69% 43% / 48% 32% 59% 55%;
+  transition: 0.5s;
+  animation: animate 6s linear infinite;
 }
-.triangle-education {
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid rgb(0, 0, 0);
-  transform: translate(310px, -31px);
-}
-.triangle-projects {
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid rgb(0, 0, 0);
-  transform: translate(400px, -31px);
-}
-.triangle-skills {
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid rgb(0, 0, 0);
-  transform: translate(465px, -31px);
-}
-.triangle-experience {
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid rgb(0, 0, 0);
-  transform: translate(250px, -31px);
-}
-.triangle-contact {
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid rgb(0, 0, 0);
-  transform: translate(335px, -31px);
+.square span:nth-child(2) {
+  position: absolute;
+  top: 1/2;
+  left: 1/2;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  transition: 0.5s;
+  animation: animate 4s linear infinite;
 }
 
+.square span:nth-child(3) {
+  position: absolute;
+  top: 1/2;
+  left: 1/2;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(255, 0, 0);
+  border-radius: 31% 45% 74% 35% / 38% 56% 51% 87%;
+  transition: 0.5s;
+  animation: animate2 10s linear infinite;
+}
 
-@-webkit-keyframes drop-animation {
-  from {
-      transform: scaleY(0);
+.heroTitle:hover span:nth-child(1) {
+  border: none;
+  background: #ffefed62;
+}
+
+.heroTitle:hover span:nth-child(2) {
+  border: none;
+  background: #dddddd56;
+}
+
+.heroTitle:hover span:nth-child(3) {
+  border: none;
+  background: #ffffff21;
+}
+
+.content {
+  position: relative;
+  color: #000000;
+  text-align: center;
+  transition: 0.5s;
+  font-size: 40px;
+}
+
+.content h1 {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #000000;
+  border-radius: 73% 27% 44% 56% / 49% 44% 56% 51%;
+}
+
+.content h1:hover {
+  background: rgba(0, 0, 0, 0.443);
+  color: #ffffff;
+}
+
+@keyframes animate {
+  0% {
+      transform: rotate(0deg);
   }
-
-  80% {
-      transform: scaleY(1.1);
-  }
-
-  to {
-      transform: scaleY(1);
+  100% {
+      transform: rotate(360deg);
   }
 }
 
-@keyframes drop-animation {
-  from {
-      transform: scaleY(0);
+@keyframes animate2 {
+  0% {
+      transform: rotate(360deg);
   }
-
-  80% {
-      transform: scaleY(1.1);
-  }
-
-  to {
-      transform: scaleY(1);
+  100% {
+      transform: rotate(0deg);
   }
 }
 
-h1{
-	background:#fff;
-	width:100%;
-	font-size:40px;
-	flex-flow:row wrap;
-	align-content:center;
-	justify-content:center
-	}
+/* Styling for hover effect on active link */
+.active:hover {
+  border: 1px solid red;
+  border-radius: 10px;
+}
 
-h1 span{width:100%;position:relative}
-
-h1 span:before{
-	background:linear-gradient(45deg,#3e000c,#d9d9d9,#fc5c7d);
-	width:100%;
-	display:block;
-	position:absolute;
-	content:"";
-	mix-blend-mode:screen
-	}
-
-[class*="blobs"]
-	{mix-blend-mode:color;animation:blobs 15s ease-in-out infinite alternate}
-
-.blobs_1{
-	background:#ff1493;
-	width:60px;
-	height:60px;
-	top:90px;
-	left:210px
-	}
-
-.blobs_2{
-	background:#ff4500;
-	width:80px;
-	height:80px;
-	top:155px;
-	left:230px
-	}
-
-.blobs_3{
-	background:#00ff00;
-	width:60px;
-	height:60px;
-	top:145px;
-	left:20px
-	}
-
-.blobs_4{
-	background:#ff0000;
-	width:100px;
-	height:100px;
-	top:115px;
-	left:100px
-	}
-
-.blobs_5{
-	background:#ffff00;
-	width:50px;
-	height:50px;
-	top:55px;
-	left:70px
-	}
-
-.blobs_6{
-	background:#00ffff;
-	width:60px;
-	height:60px;
-	top:220px;
-	left:55px
-	}
-
-.blobs_7{
-	background:#ff8c00;
-	width:50px;
-	height:50px;
-	top:210px;
-	left:180px
-	}
-
-@keyframes blobs{
-	0%{border-radius:26% 74% 61% 39% / 54% 67% 33% 46%}
-	10%{border-radius:74% 26% 47% 53% / 68% 46% 54% 32%}
-	20%{border-radius:48% 52% 30% 70% / 27% 37% 63% 73%}
-	30%{border-radius:73% 27% 57% 43% / 28% 67% 33% 72%}
-	40%{border-radius:63% 37% 56% 44% / 25% 28% 72% 75%}
-	50%{border-radius:39% 61% 70% 30% / 61% 29% 71% 39%}
-	60%{border-radius:27% 73% 29% 71% / 73% 51% 49% 27%}
-	70%{border-radius:39% 61% 65% 35% / 74% 65% 35% 26%}
-	80%{border-radius:55% 45% 37% 63% / 38% 30% 70% 62%}
-	90%{border-radius:25% 75% 70% 30% / 39% 50% 50% 61%}
-	100%{border-radius:66% 34% 33% 67% / 65% 73% 27% 35%}
-	}
+.active:focus {
+  border: 1px solid rgb(0, 21, 255);
+  border-radius: 10px;
+}
+/* Styling for the active link */
+.active {
+  background-color: red; /* Set your desired background color for the active link */
+  color: white; /* Set text color for the active link */
+  padding: 5px 10px; /* Add padding to provide some spacing */
+  border-radius: 10px; /* Optional: add rounded corners */
+}

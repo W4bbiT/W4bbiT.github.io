@@ -21,10 +21,6 @@ export class DataService {
     return 'Des Plaines, IL 60016, USA';
   }
 
-  getPhone(): string {
-    return '(872) 985-6601';
-  }
-
   getEmail(): string {
     return 'azarmohamed96@yahoo.com';
   }
@@ -95,7 +91,7 @@ export class DataService {
       name: 'Azar: Active Wear',
       purpose: 'Ecommerce wesite',
       toolUsed: 'Angular, Node.js, Express.js, MongoDB, Mongoose, HTML, CSS',
-      url: 'Coming Soom'
+      url: 'https://w4bbit.github.io/azar/'
     }]
   }
 }

@@ -15,7 +15,6 @@ import { DataService } from './data.service';
 import { ProjectsComponent } from './projects/projects.component';
 import { NgxFlickingModule } from '@egjs/ngx-flicking';
 import { NgxGridModule } from '@egjs/ngx-grid';
-import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { ObserveVisibilityDirective } from './directives/observe-visibility.directive';
 
 @NgModule({
@@ -29,7 +28,6 @@ import { ObserveVisibilityDirective } from './directives/observe-visibility.dire
     WorkHistoryComponent,
     ContactComponent,
     ProjectsComponent,
-    ClickOutsideDirective,
     ObserveVisibilityDirective,
   ],
   imports: [
@@ -40,6 +38,7 @@ import { ObserveVisibilityDirective } from './directives/observe-visibility.dire
     NgxGridModule
   ],
   providers: [DataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [ObserveVisibilityDirective]
 })
 export class AppModule { }
