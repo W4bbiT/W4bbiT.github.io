@@ -1,28 +1,30 @@
 <div class="p-5 text-center">
-    <h2 class="text-3xl font-bold block">Projects</h2>
-    <ngx-flicking class="flex justify-center text-center items-center" [options]="{circular: true,panelsPerView:1}" [plugins]="plugins">
-      <div class="text-xl" flicking-panel *ngFor="let project of projects">
-        <h3 class="text-2xl font-semibold">{{ project.name }}</h3>
-        <p><span class="font-semibold">Purpose: </span>{{ project.purpose }}</p>
-        <div *ngIf="project.name == 'Weather App'" class="font-semibold flex justify-center items-center">
-          Tools Used:
+  <h2 class="text-3xl font-bold block">Projects</h2>
+  <ngx-flicking class="flex justify-center text-center items-center" [options]="{circular: true,panelsPerView:1}"
+    [plugins]="plugins">
+    <div class="text-xl" flicking-panel *ngFor="let project of projects">
+      <h3 class="text-2xl font-semibold">{{ project.name }}</h3>
+      <p><span class="font-semibold">Purpose: </span>{{ project.purpose }}</p>
+      <h3>Tools Used:</h3>
+      <div *ngIf="project.name == 'Weather App'" class="font-semibold flex justify-center items-center">
           <img src="assets/Port/angular.png" alt="">
           <img src="assets/Port/html.png" alt="">
           <img src="assets/Port/css.png" alt="">
           <img src="assets/Port/api.png" alt="public api">
-        </div>
-        <div *ngIf="project.name == 'Azar: Active Wear'" class="font-semibold flex justify-center items-center">
-          Tools Used:
+      </div>
+      <div *ngIf="project.name == 'Azar: Active Wear'" class="font-semibold flex justify-center items-center">
           <img src="assets/Port/angular.png" alt="">
           <img src="assets/Port/nodejs.png" alt="">
           <img src="assets/Port/mongodb.png" alt="">
           <img src="assets/Port/html.png" alt="">
           <img src="assets/Port/tailwindcss.png" alt="">
           <img src="assets/Port/css.png" alt="">
-
-        </div>
-        <a href="{{ project.url }}" target="_blank">View Project</a>
+        <p>
+           Free Backend: Web Services on the free instance type are automatically spun down after 15 minutes of inactivity. When a new request for a free service comes in, Render spins it up again so it can process the request. This can cause a response delay…
+        </p>
       </div>
-      <div in-viewport class="flicking-pagination text-white"></div>
-    </ngx-flicking>
-  </div>
+      <a class="text-red-500 motion-safe:animate-bounce" href="{{ project.url }}" target="_blank">View Project</a>
+    </div>
+    <div in-viewport class="flicking-pagination text-white"></div>
+  </ngx-flicking>
+</div>

@@ -89,9 +89,9 @@ export class DataService {
       url: 'https://w4bbit.github.io/weatherApp/'
     }, {
       name: 'Azar: Active Wear',
-      purpose: 'Ecommerce wesite',
+      purpose: 'E-Commerce wesite',
       toolUsed: 'Angular, Node.js, Express.js, MongoDB, Mongoose, HTML, CSS',
-      url: 'https://w4bbit.github.io/azar/'
+      url: 'https://azar-eta.vercel.app/'
     }]
   }
 }
