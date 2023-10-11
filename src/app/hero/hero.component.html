@@ -1,6 +1,5 @@
-
 <section id="home" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
-(isCutting)="AboutCutting($event)" class="relative w-screen py-40 mb-60">
+  (isCutting)="AboutCutting($event)" class="relative w-screen py-40 mb-60">
   <div class="Iam absolute top-20 left-1/4 z-20 w-2/3">
     <div class="w-72">
       <div class="square heroTitle">
@@ -17,53 +16,62 @@
   </div>
 </section>
 
-<section class="py-40 bg-gray-300" id="about" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
-  (isCutting)="AboutCutting($event)" [@HeroAnimations]="AboutState">
-  <app-about></app-about>
-</section>
 
-<section class="py-40" id="education" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
-  (isCutting)="EducationCutting($event)" [@HeroAnimations]="EducationState">
-  <app-education></app-education>
-</section>
+<div class="xl:grid grid-cols-2">
+  <section class="py-40 bg-gray-300 rounded-full" id="about" appObserveVisibility (isIntersecting)="isIntersecting=$event"
+    (isVisible)="isVisible=$event" (isCutting)="AboutCutting($event)" [@HeroAnimations]="AboutState">
+    <app-about></app-about>
+  </section>
 
-<section class="py-40 bg-gray-300" id="projects" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
-  (isCutting)="ProjectsCutting($event)" [@HeroAnimations]="ProjectsState">
-  <app-projects></app-projects>
-</section>
+  <section class="py-40" id="education" appObserveVisibility (isIntersecting)="isIntersecting=$event"
+    (isVisible)="isVisible=$event" (isCutting)="EducationCutting($event)" [@HeroAnimations]="EducationState">
+    <app-education></app-education>
+  </section>
+</div>
 
-<section class="py-40" id="skills" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
-  (isCutting)="SkillsCutting($event)" [@HeroAnimations]="SkillsState">
-  <app-skills></app-skills>
-</section>
+<div class="xl:grid grid-cols-2">
+  <section class="py-40 bg-gray-300 xl:bg-white rounded-3xl" id="projects" appObserveVisibility (isIntersecting)="isIntersecting=$event"
+    (isVisible)="isVisible=$event" (isCutting)="ProjectsCutting($event)" [@HeroAnimations]="ProjectsState">
+    <app-projects></app-projects>
+  </section>
 
-<section class="py-40 bg-gray-300" id="experience" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
-  (isCutting)="ExperienceCutting($event)" [@HeroAnimations]="ExperienceState">
-  <app-work-history></app-work-history>
-</section>
+  <section class="py-40 xl:bg-gray-300 xl:rounded-3xl" id="skills" appObserveVisibility (isIntersecting)="isIntersecting=$event"
+    (isVisible)="isVisible=$event" (isCutting)="SkillsCutting($event)" [@HeroAnimations]="SkillsState">
+    <app-skills></app-skills>
+  </section>
+</div>
 
-<section class="py-40" id="contact" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
-  (isCutting)="ContactCutting($event)" [@HeroAnimations]="ContactState">
-  <app-contact></app-contact>
-  <div class="flex justify-center p-5">
-    <div class="w-96">
-      <h2>
-        LinkedIn
-      </h2>
-      <p>This is where I network and build my professional portfolio</p>
-      <a class="text-red-500 rounded-full hover:bg-black p-1" href="https://www.linkedin.com/in/azar-ansar-41a133100/" target="_blank">Azar Ansar</a>
+<div class="xl:grid grid-cols-2">
+  <section class="py-40 bg-gray-300 rounded-tr-3xl" id="experience" appObserveVisibility (isIntersecting)="isIntersecting=$event"
+    (isVisible)="isVisible=$event" (isCutting)="ExperienceCutting($event)" [@HeroAnimations]="ExperienceState">
+    <app-work-history></app-work-history>
+  </section>
+
+  <section class="py-40" id="contact" appObserveVisibility (isIntersecting)="isIntersecting=$event"
+    (isVisible)="isVisible=$event" (isCutting)="ContactCutting($event)" [@HeroAnimations]="ContactState">
+    <app-contact></app-contact>
+    <div class="flex justify-center p-5">
+      <div class="w-96">
+        <h2>
+          LinkedIn
+        </h2>
+        <p>This is where I network and build my professional portfolio</p>
+        <a class="text-red-500 rounded-full hover:bg-black p-1" href="https://www.linkedin.com/in/azar-ansar-41a133100/"
+          target="_blank">Azar Ansar</a>
+      </div>
+
+      <div class="w-96">
+        <h2>
+          Github
+        </h2>
+        <p>This is where I share code and work on projects</p>
+        <a class="text-red-500 rounded-full hover:bg-black p-1" href="https://github.com/W4bbiT"
+          target="_blank">W4bbiT</a>
+      </div>
     </div>
+  </section>
+</div>
 
-    <div class="w-96">
-      <h2>
-        Github
-      </h2>
-      <p>This is where I share code and work on projects</p>
-      <a class="text-red-500 rounded-full hover:bg-black p-1" href="https://github.com/W4bbiT" target="_blank">W4bbiT</a>
-    </div>
-  </div>
-
-</section>
 
 
 <footer class="bg-gray-800 text-white flex justify-center text-center p-5 py-10">
