@@ -106,7 +106,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     const sectionIds = ['home', 'about', 'education', 'projects', 'skills', 'experience', 'contact'];
   
     // Define the offset to adjust the scroll position
-    const offset = -500;  // Adjust this value based on your layout
+    const offset = -300;  // Adjust this value based on your layout
   
     // Get the positions of each section with the offset
     for (const sectionId of sectionIds) {
