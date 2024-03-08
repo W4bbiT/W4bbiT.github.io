@@ -53,6 +53,7 @@ export class HeroComponent implements OnInit, AfterViewInit {
     " SnowFlake",
     " Azure",
     " Git",
+    " AWS"
   ];
   textColor = "black";
   fontSize = "40px";

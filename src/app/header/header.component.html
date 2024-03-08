@@ -1,43 +1,77 @@
 <header class="p-2 glass top-0 sticky z-30 w-screen">
-  <div class="flex gap-5 justify-evenly items-center">
+  <div class="flex gap-5 justify-between items-center">
     <div class="flex justify-center items-center">
       <div class="square heroTitle">
-        <span></span>
-        <span class="shadow-inner shadow-black"></span>
-        <span></span>
         <div class="content">
-          <h1 class="">AA</h1>
+          <h1 class="ml-10 font-extrabold bg-red-500">Azar</h1>
         </div>
       </div>
     </div>
-    <nav class="md:flex md:flex-wrap md:gap-2 md:justify-evenly">
-      <a id="homeNav" [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'home' }" routerLinkActive="active" class="cursor-pointer" (click)="toggleHome('home'); toggleWobbly()">
+    <nav class="md:flex md:flex-wrap md:gap-2 md:justify-evenly" id="navLinks">
+      <a id="homeNav" [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'home' }" routerLinkActive="active"
+        class="cursor-pointer" (click)="toggleHome('home'); toggleWobbly()">
         Home
       </a>
-    
-      <a id="aboutNav" [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'about' }" routerLinkActive="active" class="cursor-pointer" (click)="toggleAbout('about'); toggleWobbly()">
+      <a id="aboutNav" [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'about' }"
+        routerLinkActive="active" class="cursor-pointer" (click)="toggleAbout('about'); toggleWobbly()">
         About
       </a>
-    
-      <a id="educationNav" [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'education' }" routerLinkActive="active" class="cursor-pointer" (click)="toggleEducation('education'); toggleWobbly()">
+      <a id="educationNav" [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'education' }"
+        routerLinkActive="active" class="cursor-pointer" (click)="toggleEducation('education'); toggleWobbly()">
         Education
       </a>
-    
-      <a id="projectsNav" [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'projects' }" routerLinkActive="active" class="cursor-pointer" (click)="toggleProjects('projects'); toggleWobbly()">
+      <a id="projectsNav" [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'projects' }"
+        routerLinkActive="active" class="cursor-pointer" (click)="toggleProjects('projects'); toggleWobbly()">
         Projects
       </a>
-    
-      <a id="skillsNav" [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'skills' }" routerLinkActive="active" class="cursor-pointer" (click)="toggleSkills('skills'); toggleWobbly()">
+      <a id="skillsNav" [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'skills' }"
+        routerLinkActive="active" class="cursor-pointer" (click)="toggleSkills('skills'); toggleWobbly()">
         Skills
       </a>
-    
-      <a id="experienceNav" [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'experience' }" routerLinkActive="active" class="cursor-pointer" (click)="toggleExperience('experience'); toggleWobbly()">
+      <a id="experienceNav" [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'experience' }"
+        routerLinkActive="active" class="cursor-pointer" (click)="toggleExperience('experience'); toggleWobbly()">
         Experience
       </a>
-    
-      <a id="contactNav" [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'contact' }" routerLinkActive="active" class="cursor-pointer" (click)="toggleContact('contact'); toggleWobbly();">
+      <a id="contactNav" [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'contact' }"
+        routerLinkActive="active" class="cursor-pointer" (click)="toggleContact('contact'); toggleWobbly();">
         Contact
       </a>
     </nav>
+    <div appClickOutside (clickOutside)="clickedOutside()">
+      <button class="toggle-menu"  (click)="toggleMenu()">
+        <i class="bg-red-500"></i>
+        <i class="bg-red-500"></i>
+      </button>
+      <nav id="navLink" class="menu-drawer" *ngIf="isMenuOpened">
+        <a [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'home' }" routerLinkActive="active"
+          class="cursor-pointer block" (click)="toggleHome('home'); toggleWobbly()">
+          Home
+        </a>
+        <a [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'about' }" routerLinkActive="active"
+          class="cursor-pointer block" (click)="toggleAbout('about'); toggleWobbly()">
+          About
+        </a>
+        <a [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'education' }" routerLinkActive="active"
+          class="cursor-pointer block" (click)="toggleEducation('education'); toggleWobbly()">
+          Education
+        </a>
+        <a [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'projects' }" routerLinkActive="active"
+          class="cursor-pointer block" (click)="toggleProjects('projects'); toggleWobbly()">
+          Projects
+        </a>
+        <a [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'skills' }" routerLinkActive="active"
+          class="cursor-pointer block" (click)="toggleSkills('skills'); toggleWobbly()">
+          Skills
+        </a>
+        <a [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'experience' }" routerLinkActive="active"
+          class="cursor-pointer block" (click)="toggleExperience('experience'); toggleWobbly()">
+          Experience
+        </a>
+        <a [@wobbly]="isWobbly" [ngClass]="{ 'active': activeSection === 'contact' }" routerLinkActive="active"
+          class="cursor-pointer block" (click)="toggleContact('contact'); toggleWobbly();">
+          Contact
+        </a>
+      </nav>
+    </div>
   </div>
 </header>

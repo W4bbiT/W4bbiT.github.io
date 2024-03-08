@@ -16,6 +16,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { NgxFlickingModule } from '@egjs/ngx-flicking';
 import { NgxGridModule } from '@egjs/ngx-grid';
 import { ObserveVisibilityDirective } from './directives/observe-visibility.directive';
+import { ClickOutsideDirective } from './directives/click-outside.directive';
+import { DropMenuComponent } from './drop-menu/drop-menu.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { ObserveVisibilityDirective } from './directives/observe-visibility.dire
     ContactComponent,
     ProjectsComponent,
     ObserveVisibilityDirective,
+    ClickOutsideDirective,
+    DropMenuComponent,
   ],
   imports: [
     BrowserModule,

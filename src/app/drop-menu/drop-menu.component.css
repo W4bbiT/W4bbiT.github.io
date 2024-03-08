@@ -1,0 +1,39 @@
+.dropDownMenu {
+    -webkit-animation-name: menu-animation;
+    animation-name: menu-animation;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+    background: rgba(50, 50, 50, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+}
+@-webkit-keyframes menu-animation {
+    from {
+        transform: scaleY(0);
+    }
+
+    80% {
+        transform: scaleY(1.1);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes menu-animation {
+    from {
+        transform: scaleY(0);
+    }
+
+    80% {
+        transform: scaleY(1.1);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}

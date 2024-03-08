@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   toggleWobbly() {
     this.isWobbly = !this.isWobbly;
   }
-  activeSection: string = ''; // Initialize with a default value or leave empty
+  activeSection: string = ''; 
   fullName: string = '';
   title: string = '';
   isAboutOpened: boolean = false
@@ -37,6 +37,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   isSkillsOpened: boolean = false
   isExperienceOpened: boolean = false
   isContactOpened: boolean = false
+  isMenuOpened: boolean = false
+  isMenuActive: boolean = false;
+
 
   constructor(private dataService: DataService,
   ) { }
@@ -48,6 +51,19 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.updateActiveSection();
+  } 
+  toggleMenuActive(): void {
+    this.isMenuActive = !this.isMenuActive;
+  }
+  toggleDropdown(): void {
+    this.isMenuOpened = !this.isMenuOpened;
+  } 
+  toggleMenu(): void {
+    this.toggleDropdown();
+    this.toggleMenuActive();
+  }
+  clickedOutside(): void {
+    this.isMenuOpened = false;
   }
 
   toggleHome(id: string): void {
@@ -95,20 +111,15 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
-    // Update the active section based on scroll position
     this.updateActiveSection();
   }
   updateActiveSection() {
-    // Define an object to hold section IDs and their positions
     const sectionPositions: { [key: string]: number } = {};
   
-    // Define the section IDs
     const sectionIds = ['home', 'about', 'education', 'projects', 'skills', 'experience', 'contact'];
   
-    // Define the offset to adjust the scroll position
-    const offset = -300;  // Adjust this value based on your layout
+    const offset = -300;  
   
-    // Get the positions of each section with the offset
     for (const sectionId of sectionIds) {
       const sectionElement = document.getElementById(sectionId);
       if (sectionElement) {
@@ -116,19 +127,15 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       }
     }
   
-    // Get the scroll position
     const scrollPosition = window.scrollY;
   
-    // Initialize a variable to keep track of the active section
     let activeSection = 'home';
   
-    // Determine the active section based on scroll position
     for (const section in sectionPositions) {
       if (scrollPosition >= sectionPositions[section]) {
         activeSection = section;
       }
     }
-    // Update this.activeSection accordingly
     this.activeSection = activeSection;
     console.log('Active section:', this.activeSection);
   }
