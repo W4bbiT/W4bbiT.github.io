@@ -55,7 +55,7 @@ export class HeroComponent implements OnInit, AfterViewInit {
     " Git",
     " AWS"
   ];
-  textColor = "black";
+  textColor = "red";
   fontSize = "40px";
   blinkWidth = "2px";
   typingSpeedMilliseconds = 300;
@@ -102,6 +102,13 @@ export class HeroComponent implements OnInit, AfterViewInit {
     this.initVariables();
     this.typingEffect();
 
+  }
+
+  toggleContact(id: string): void {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
   AboutCutting(event: boolean) {

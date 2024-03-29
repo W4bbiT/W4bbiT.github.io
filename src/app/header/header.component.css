@@ -1,11 +1,8 @@
 
 .glass {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.139);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
   scroll-padding: -30rem;
 }
 
@@ -105,17 +102,7 @@
   }
 }
 
-.active:hover {
-  border: 1px solid red;
-  border-radius: 10px;
-}
-
-.active:focus {
-  border: 1px solid rgb(0, 21, 255);
-  border-radius: 10px;
-}
-
-.active {
+nav .active {
   background-color: red;
   color: white;
   padding: 5px 10px;
@@ -130,13 +117,13 @@
   position: relative;
   right: 75px;
   float: right;
-  z-index: 1000;
+  /* z-index: 1000; */
 }
 
-.toggle-menu i {
+/* .toggle-menu i {
   position: absolute;
   display: none;
-  height: 3px;
+  height: 35px;
   width: 15px;
   left: 0px;
   -webkit-transition: all .3s;
@@ -153,24 +140,14 @@
   transform: translateX(10px) rotateZ(-45deg);
 }
 
-/* .toggle-menu i:nth-child(3) {
-  top: 32px;
-} */
-
-.toggle-menu.active i:nth-child(1) {
-  background-color: red;
-  /* -webkit-transform: translateX(10px);
-  transform: translateX(10px); */
+.toggle-menu i:nth-child(1){
+  transform: translateX(10px);
 }
 
-/* .toggle-menu.active i:nth-child(2) {
-  background: transparent;
-} */
-
-.toggle-menu.active i:nth-child(2) {
-  -webkit-transform: translateX(-10px);
+.toggle-menu i:nth-child(2){
   transform: translateX(-10px);
-}
+} */
+
 
 .menu-drawer {
   right: 20px;
@@ -188,6 +165,46 @@
   width: 200px;
 }
 
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 1000;
+  position: relative;
+  right: 10px;
+
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  height: 3em;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: rgb(255, 0, 0);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 11 62;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
 @media (max-width: 768px) {
   #navLinks {
     display: none;
@@ -198,4 +215,20 @@
   .toggle-menu i{
     display: block;
   }
+  .hamburger {
+    display: block;
+  }
+  /* .hamburger input {
+    display: block;
+  }
+  .hamburger svg {
+    display: block;
+  }
+  .line {
+    display: block;
+  }
+  .line-top-bottom {
+    display: block;
+  } */
 }
+
