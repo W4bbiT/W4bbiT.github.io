@@ -18,31 +18,31 @@ import { animate, keyframes, state, style, transition, trigger } from '@angular/
         style({ transform: 'scale(1.1)', offset: 1.0 })
       ]))),
       transition('active => inactive', animate('800ms ease-out'))
+    ]),
+    trigger('slideInOut', [
+      state('in', style({
+        transform: 'translateY(0)',
+        opacity: 1
+      })),
+      state('out', style({
+        transform: 'translateY(-100%)',
+        opacity: 0
+      })),
+      transition('in => out', animate('500ms ease-out')),
+      transition('out => in', animate('500ms ease-in'))
     ])
   ]
 })
 
 export class HeaderComponent implements OnInit, AfterViewInit {
   isWobbly = false;
+  isMenuOpened = false;
 
-  toggleWobbly() {
-    this.isWobbly = !this.isWobbly;
-  }
   activeSection: string = ''; 
   fullName: string = '';
   title: string = '';
-  isAboutOpened: boolean = false
-  isEducationOpened: boolean = false
-  isProjectsOpened: boolean = false
-  isSkillsOpened: boolean = false
-  isExperienceOpened: boolean = false
-  isContactOpened: boolean = false
-  isMenuOpened: boolean = false
-  isMenuActive: boolean = false;
-
-
-  constructor(private dataService: DataService,
-  ) { }
+  
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.fullName = this.dataService.getFullName();
@@ -51,68 +51,32 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.updateActiveSection();
-  } 
-  toggleMenuActive(): void {
-    this.isMenuActive = !this.isMenuActive;
   }
-  toggleDropdown(): void {
+
+  toggleWobbly() {
+    this.isWobbly = !this.isWobbly;
+  }
+
+  toggleMenu() {
     this.isMenuOpened = !this.isMenuOpened;
-  } 
-  toggleMenu(): void {
-    this.toggleDropdown();
-    this.toggleMenuActive();
   }
+
   clickedOutside(): void {
     this.isMenuOpened = false;
   }
 
-  toggleHome(id: string): void {
+  toggleSection(id: string): void {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   }
 
-  toggleAbout(id: string): void {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  }
-  toggleEducation(id: string): void {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  }
-  toggleProjects(id: string): void {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  }
-  toggleSkills(id: string): void {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  }
-  toggleExperience(id: string): void {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  }
-  toggleContact(id: string): void {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  }
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
     this.updateActiveSection();
   }
+
   updateActiveSection() {
     const sectionPositions: { [key: string]: number } = {};
   

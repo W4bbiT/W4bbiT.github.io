@@ -1,9 +1,7 @@
-
 .glass {
   background: rgba(0, 0, 0, 0.139);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  scroll-padding: -30rem;
 }
 
 .square {
@@ -13,38 +11,31 @@
   align-items: center;
 }
 
-.square span:nth-child(1) {
+.square span:nth-child(1),
+.square span:nth-child(2),
+.square span:nth-child(3) {
   position: absolute;
-  top: 1/2;
-  left: 1/2;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100%;
   border: 1px solid black;
-  border-radius: 32% 58% 69% 43% / 48% 32% 59% 55%;
   transition: 0.5s;
+}
+
+.square span:nth-child(1) {
+  border-radius: 32% 58% 69% 43% / 48% 32% 59% 55%;
   animation: animate 6s linear infinite;
 }
+
 .square span:nth-child(2) {
-  position: absolute;
-  top: 1/2;
-  left: 1/2;
-  width: 100%;
-  height: 100%;
-  border: 1px solid black;
   border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-  transition: 0.5s;
   animation: animate 4s linear infinite;
 }
 
 .square span:nth-child(3) {
-  position: absolute;
-  top: 1/2;
-  left: 1/2;
-  width: 100%;
-  height: 100%;
   border: 1px solid rgb(255, 0, 0);
   border-radius: 31% 45% 74% 35% / 38% 56% 51% 87%;
-  transition: 0.5s;
   animation: animate2 10s linear infinite;
 }
 
@@ -86,19 +77,19 @@
 
 @keyframes animate {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes animate2 {
   0% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
   100% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -109,73 +100,26 @@ nav .active {
   border-radius: 10px;
 }
 
-
 .toggle-menu {
   width: 50px;
   height: 50px;
-  display: none;
   position: relative;
   right: 75px;
-  float: right;
-  /* z-index: 1000; */
-}
-
-/* .toggle-menu i {
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   display: none;
-  height: 35px;
-  width: 15px;
-  left: 0px;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-
-.toggle-menu i:nth-child(1) {
-  -webkit-transform: rotateZ(45deg);
-  transform: rotateZ(45deg);
-}
-
-.toggle-menu i:nth-child(2) {
-  -webkit-transform: translateX(10px) rotateZ(-45deg);
-  transform: translateX(10px) rotateZ(-45deg);
-}
-
-.toggle-menu i:nth-child(1){
-  transform: translateX(10px);
-}
-
-.toggle-menu i:nth-child(2){
-  transform: translateX(-10px);
-} */
-
-
-.menu-drawer {
-  right: 20px;
-  top: 75px;
-  position: absolute;
-  transition: right linear .2s;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  scroll-padding: -30rem;
-  width: 200px;
 }
 
 .hamburger {
   display: none;
-  cursor: pointer;
-  z-index: 1000;
-  position: relative;
-  right: 10px;
-
 }
 
-.hamburger input {
-  display: none;
+
+.hamburger button {
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .hamburger svg {
@@ -190,45 +134,63 @@ nav .active {
   stroke-linejoin: round;
   stroke-width: 3;
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .line-top-bottom {
   stroke-dasharray: 11 62;
 }
 
-.hamburger input:checked + svg {
+.hamburger button.active svg {
   transform: rotate(-45deg);
 }
 
-.hamburger input:checked + svg .line-top-bottom {
+.hamburger button.active svg .line-top-bottom {
   stroke-dasharray: 20 300;
   stroke-dashoffset: -32.42;
 }
+
+.menu-drawer {
+  right: 20px;
+  top: 75px;
+  position: absolute;
+  transition: right linear .2s;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 200px;
+  display: none;
+  animation: slideInOut 0.5s ease-in-out;
+
+}
+
+@keyframes slideInOut {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   #navLinks {
     display: none;
   }
   .toggle-menu {
-    display: block;
+    display: flex;
   }
-  .toggle-menu i{
-    display: block;
-  }
+
   .hamburger {
     display: block;
   }
-  /* .hamburger input {
+  .menu-drawer {
     display: block;
   }
-  .hamburger svg {
-    display: block;
-  }
-  .line {
-    display: block;
-  }
-  .line-top-bottom {
-    display: block;
-  } */
 }
-
