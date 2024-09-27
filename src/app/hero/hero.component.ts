@@ -50,15 +50,14 @@ export class HeroComponent implements OnInit, AfterViewInit {
     " Java",
     " MongoDB",
     " MySQL",
-    " SnowFlake",
+    " SpringBoot",
     " Azure",
-    " Git",
     " AWS"
   ];
   textColor = "red";
   fontSize = "40px";
   blinkWidth = "2px";
-  typingSpeedMilliseconds = 300;
+  typingSpeedMilliseconds = 350;
   deleteSpeedMilliseconds = 100;
   private i = 0;
 
