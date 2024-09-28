@@ -38,6 +38,18 @@ export class DataService {
   getWorkHistory(): any[] {
     return [
       {
+        position: 'Fullstack Developer',
+        company: 'Stratus Networks',
+        date: '04/2024 - Current',
+        responsibilities: [
+          'Developed and maintained full-stack applications using Spring Boot for backend development and Angular for frontend interfaces.',
+          'Designed and optimized complex SQL queries for MySQL database management, improving the efficiency of data retrieval and updates.',
+          'Collaborated with multiple departments, particularly the billing department, to gather requirements and implement solutions that streamline business processes.',
+          'Managed version control and code collaboration using GitHub, ensuring smooth code deployments and integration.',
+          'Contributed to the design and development of features related to billing and payments, enhancing the overall accuracy and speed of the billing systems.'
+        ]
+      },
+      {
         position: 'FullStack Developer',
         company: 'TCS',
         date: '10/2021 - 12/2023',
@@ -64,20 +76,7 @@ export class DataService {
 
   getProjects(): any[] {
     return [
-
       {
-        name: 'Data Migration Marvel at Albertsons Group',
-        details: 'Defined migration requirements and implemented efficient ETL processes. Pivotal role in enhancing data architecture, improving accuracy, and accessibility.',
-        toolUsed: 'Azure Cloud, Snowflake, SQL.',
-      }, {
-        name: 'Ecommerce Empowerment at TCS',
-        details: 'Engineered complete backend for an Ecommerce website with a dynamic three-member team.',
-        toolUsed: 'Java, Springboot, MySQL, and JPA',
-      }, {
-        name: 'Cutting-Edge Local Marketplace App',
-        details: 'Currently developing a local marketplace app for Android and iOS',
-        toolUsed: 'Node, Express, MongoDB, Angular, and Ionic',
-      }, {
         name: 'Weather App',
         purpose: 'Showcasing the current weather for searched city.',
         toolUsed: 'Angular, HTML, CSS, Public Weather Api',

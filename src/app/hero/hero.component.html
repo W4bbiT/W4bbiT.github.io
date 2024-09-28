@@ -21,7 +21,6 @@
       Contact me!
       </button>
     </div>
-
   </section>
 
   <section class="py-40 max-w-screen-lg mx-auto" id="about" appObserveVisibility
@@ -30,17 +29,10 @@
     <app-about></app-about>
   </section>
 
-  <section class="py-40 max-w-screen-lg mx-auto" id="education" appObserveVisibility
-    (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event" (isCutting)="EducationCutting($event)"
-    [@HeroAnimations]="EducationState">
-    <app-education></app-education>
-  </section>
-
-  <section class="py-40 max-w-screen-lg mx-auto" id="projects" appObserveVisibility
-    (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event" (isCutting)="ProjectsCutting($event)"
-    [@HeroAnimations]="ProjectsState">
-
-    <app-projects></app-projects>
+  <section class="py-40 max-w-screen-lg mx-auto" id="experience" appObserveVisibility
+    (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event" (isCutting)="ExperienceCutting($event)"
+    [@HeroAnimations]="ExperienceState">
+    <app-work-history></app-work-history>
   </section>
 
   <section class="py-40 max-w-screen-lg mx-auto" id="skills" appObserveVisibility
@@ -49,12 +41,16 @@
     <app-skills></app-skills>
   </section>
 
+  <section class="py-40 max-w-screen-lg mx-auto" id="education" appObserveVisibility
+  (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event" (isCutting)="EducationCutting($event)"
+  [@HeroAnimations]="EducationState">
+  <app-education></app-education>
+</section>
 
-
-  <section class="py-40 max-w-screen-lg mx-auto" id="experience" appObserveVisibility
-    (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event" (isCutting)="ExperienceCutting($event)"
-    [@HeroAnimations]="ExperienceState">
-    <app-work-history></app-work-history>
+  <section class="py-40 max-w-screen-lg mx-auto" id="projects" appObserveVisibility
+    (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event" (isCutting)="ProjectsCutting($event)"
+    [@HeroAnimations]="ProjectsState">
+    <app-projects></app-projects>
   </section>
 
   <section class="py-40 max-w-screen-lg mx-auto" id="contact" appObserveVisibility
