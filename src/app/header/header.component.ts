@@ -78,29 +78,26 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   updateActiveSection() {
-    const sectionPositions: { [key: string]: number } = {};
-  
     const sectionIds = ['home', 'about', 'education', 'projects', 'skills', 'experience', 'contact'];
-  
-    const offset = -300;  
+    
+    let activeSection = 'home';  
+    let minDistance = window.innerHeight; // Start with a large value
   
     for (const sectionId of sectionIds) {
       const sectionElement = document.getElementById(sectionId);
       if (sectionElement) {
-        sectionPositions[sectionId] = sectionElement.offsetTop + offset;
+        const rect = sectionElement.getBoundingClientRect();
+        const distance = Math.abs(rect.top); // Distance from top of the viewport
+  
+        if (distance < minDistance && rect.top < window.innerHeight / 2) {
+          minDistance = distance;
+          activeSection = sectionId;
+        }
       }
     }
   
-    const scrollPosition = window.scrollY;
-  
-    let activeSection = 'home';
-  
-    for (const section in sectionPositions) {
-      if (scrollPosition >= sectionPositions[section]) {
-        activeSection = section;
-      }
-    }
     this.activeSection = activeSection;
     console.log('Active section:', this.activeSection);
   }
+  
 }
