@@ -108,3 +108,11 @@ div{
         transform: rotate(0deg);
     }
 }
+
+@media (max-width: 768px) { /* Adjust the 768px breakpoint as needed */
+    .square {
+        scale: .6;
+        position: absolute;
+        left: -50px;
+    }
+}
