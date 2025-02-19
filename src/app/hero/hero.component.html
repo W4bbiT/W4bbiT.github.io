@@ -1,29 +1,18 @@
-<div class="grid-flow-row bg-gray-900 text-white">
+<div class="grid-flow-row text-white">
   <section id="home" appObserveVisibility (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event"
-    (isCutting)="AboutCutting($event)" class="relative w-screen py-40 mb-60 flex flex-row-reverse">
-    <div class="Iam absolute top-20 left-1/4 z-20 w-2/3">
-      <div class="w-72">
+    (isCutting)="AboutCutting($event)" class="flex justify-center items-center text-center">
+    <div class="">
         <div class="square heroTitle">
-          <span></span>
-          <span class="shadow-inner shadow-black"></span>
-          <span></span>
-          <div class="content">
-            <p class="title text-2xl">I am a Fullstack Developer with expertise in </p>
-            <p #textElement class="xp text text-red-500"></p>
-            <p #blinkElement class="xp blink text blink text-red-500"></p>
+          <div class="content h-10 ml-5">
+            <p class="title text-4xl">I am a Fullstack Developer with expertise in </p>
+            <p #textElement class="xp text"></p>
+            <p #blinkElement class="xp blink text blink"></p>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="hidden md:block md:left-3/4 z-20 md:w-1/3">
-      <button id="contactNav"
-      class="cursor-pointer bg-red-500 border border-spacing-1 border-white p-2 m-2 rounded-full hover:shadow-white hover:shadow-inner" (click)="toggleContact('contact')">
-      Contact me!
-      </button>
     </div>
   </section>
 
-  <section class="py-40 max-w-screen-lg mx-auto" id="about" appObserveVisibility
+  <section class="" id="about" appObserveVisibility
     (isIntersecting)="isIntersecting=$event" (isVisible)="isVisible=$event" (isCutting)="AboutCutting($event)"
     [@HeroAnimations]="AboutState">
     <app-about></app-about>

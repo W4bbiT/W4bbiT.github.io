@@ -2,8 +2,7 @@ import { Component, OnInit, AfterViewInit, ElementRef, Input, Renderer2, ViewChi
 import { ViewportScroller } from "@angular/common";
 import { DataService } from '../data.service';
 import { animate, state, style, transition, trigger, keyframes } from '@angular/animations';
-import { Router } from '@angular/router';
-import { Subscription, debounceTime, fromEvent } from 'rxjs';
+
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
@@ -52,9 +51,9 @@ export class HeroComponent implements OnInit, AfterViewInit {
     " MySQL",
     " SpringBoot",
     " Azure",
-    " AWS"
+    " AWS",
+    " PostgreSQL"
   ];
-  textColor = "red";
   fontSize = "40px";
   blinkWidth = "2px";
   typingSpeedMilliseconds = 350;
@@ -103,13 +102,6 @@ export class HeroComponent implements OnInit, AfterViewInit {
 
   }
 
-  toggleContact(id: string): void {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  }
-
   AboutCutting(event: boolean) {
     this.aboutIsCutting = event;
     if (this.aboutIsCutting) {
@@ -150,25 +142,14 @@ export class HeroComponent implements OnInit, AfterViewInit {
   private initVariables(): void {
     this.renderer.setStyle(
       this.textElement.nativeElement,
-      "color",
-      this.textColor
-    );
-    this.renderer.setStyle(
-      this.textElement.nativeElement,
       "font-size",
       this.fontSize
     );
     this.renderer.setStyle(this.textElement.nativeElement, "padding", "0.1em");
-
     this.renderer.setStyle(
       this.blinkElement.nativeElement,
       "border-right-width",
       this.blinkWidth
-    );
-    this.renderer.setStyle(
-      this.blinkElement.nativeElement,
-      "border-right-color",
-      this.textColor
     );
     this.renderer.setStyle(
       this.blinkElement.nativeElement,
