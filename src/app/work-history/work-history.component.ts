@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { AutoPlay } from '@egjs/flicking-plugins';
+import { AutoPlay, Perspective } from '@egjs/flicking-plugins';
 import { Plugin } from "@egjs/ngx-flicking";
 
 @Component({
@@ -10,7 +10,7 @@ import { Plugin } from "@egjs/ngx-flicking";
 })
 export class WorkHistoryComponent implements OnInit {
   workHistory: any[] = []; // Define the structure that matches your data
-  public plugins: Plugin[] = [new AutoPlay({ duration: 3000, direction: "NEXT", stopOnHover: false })];
+  public plugins: Plugin[] = [new Perspective({ rotate: 0.5 }), new AutoPlay({ duration: 5000, direction: "NEXT", stopOnHover: false })];
 
   constructor(private dataService: DataService) {}
 

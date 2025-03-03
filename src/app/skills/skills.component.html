@@ -1,8 +1,8 @@
 <div class="p-5 relative text-center">
     <div class="z-10">
         <h2 class="text-3xl font-semibold">Software Skills</h2>
-        <ngx-flicking class="p-5"
-            [options]="{ circular: true, moveType: 'snap',iOSEdgeSwipeThreshold: 30 }" [plugins]="softwareSkillsPlugins">
+        <ngx-flicking #flicking0 class="p-5 card-panel"
+            [options]="{ bound: true, bounce: 30, align: 'prev', circular: true ,iOSEdgeSwipeThreshold: 30 }" [plugins]="plugins">
             <div class="text-center mx-20" flicking-panel>
                 <img src="assets/Port/java.png" alt="">
                 <p class="">Java</p>    
@@ -43,8 +43,8 @@
     </div>
     <div class="">
         <h2 class="text-3xl font-semibold">General Skills</h2>
-        <ngx-flicking class="p-5"
-            [options]="{ circular: true, moveType: 'snap',iOSEdgeSwipeThreshold: 30 }" [plugins]="generalSkillsPlugins">
+        <ngx-flicking  #flicking1 class="p-5 card-panel"
+            [options]="{  bound: true, bounce: 30, align: 'prev' ,circular: true, iOSEdgeSwipeThreshold: 30 }">
             
             <div class="text-center mx-20" flicking-panel>
                 <img src="assets/Port/maths.png" alt="">
@@ -82,8 +82,8 @@
     </div>
     <div class="">
         <h2 class="text-3xl font-semibold">Hardware Skills</h2>
-        <ngx-flicking class="p-5"
-            [options]="{ circular: true, moveType: 'snap',iOSEdgeSwipeThreshold: 30 }" [plugins]="hardwareSkillsPlugins">
+        <ngx-flicking #flicking2 class="p-5 card-panel"
+            [options]="{  bound: true, bounce: 30, align: 'prev' , circular: true,iOSEdgeSwipeThreshold: 30 }">
             <div class="text-center mx-20" flicking-panel>
                 <img src="assets/Port/circuit.png" alt="">
                 <p class="px-5">AC DC circuit design</p>

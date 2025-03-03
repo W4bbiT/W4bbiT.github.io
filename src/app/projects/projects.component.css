@@ -1,4 +1,19 @@
 ngx-flicking{
     border: 1px;
     border-radius: 50px;
+    max-width: 80vw;
 }
+
+.card-panel {
+    width: 70%;
+    height: fit-content;
+    overflow-y: scroll;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.091);
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+  }

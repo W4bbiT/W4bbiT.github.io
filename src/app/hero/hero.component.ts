@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ElementRef, Input, Renderer2, ViewChild, OnDestroy, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, Input, Renderer2, ViewChild, OnDestroy, EventEmitter, Output, HostListener } from '@angular/core';
 import { ViewportScroller } from "@angular/common";
 import { DataService } from '../data.service';
 import { animate, state, style, transition, trigger, keyframes } from '@angular/animations';
@@ -9,35 +9,23 @@ import { animate, state, style, transition, trigger, keyframes } from '@angular/
   styleUrls: ['./hero.component.css'],
   animations: [
     trigger('HeroAnimations', [
-      state('Left', style({
-        transform: 'scale(1)',
+      state('InView', style({
+        transform: 'translateY(0)',
         opacity: 1,
+        scale: 1,
       })),
-      state('Right', style({
-        transform: 'scale(1)',
-        opacity: 1,
+      state('OutOfView', style({
+        transform: 'translateY(20px)',
+        opacity: 0,
+        scale: 0.8,
       })),
-      state('SlideFromLeft', style({
-        opacity: 0.4,
-      })),
-      state('SlideFromRight', style({
-        opacity: 0.4,
-      })),
-      transition('* => Left', [
-        animate('700ms 500ms ease-in-out', keyframes([
-          style({ opacity: 0.4, transform: 'scale(1)', offset: 0 }),
-          style({ opacity: 0.8, transform: 'scale(1.05)', offset: 0.5 }),
-          style({ opacity: 1, transform: 'scale(1)', offset: 1.0 })
-        ]))
-      ]),
-      transition('* => Right', [
-        animate('700ms 500ms ease-in-out', keyframes([
-          style({ opacity: 0.4, transform: 'scale(1)', offset: 0 }),
-          style({ opacity: 0.8, transform: 'scale(1.1)', offset: 0.5 }),
-          style({ opacity: 1, transform: 'scale(1)', offset: 1.0 })
+      transition('OutOfView => InView', [
+        animate('500ms ease-in-out', keyframes([
+          style({ transform: 'translateY(20px)', opacity: 0, offset: 0 , scale: 0.8}),
+          style({ transform: 'translateY(0)', opacity: 1, offset: 1, scale: 1})
         ]))
       ])
-    ]),
+    ])
   ]
 })
 export class HeroComponent implements OnInit, AfterViewInit {
@@ -60,29 +48,25 @@ export class HeroComponent implements OnInit, AfterViewInit {
   deleteSpeedMilliseconds = 100;
   private i = 0;
 
-  AboutState = 'SlideFromLeft';
-  EducationState = 'SlideFromRight';
-  ProjectsState = 'SlideFromLeft';
-  SkillsState = 'SlideFromRight';
-  ExperienceState = 'SlideFromLeft';
-  ContactState = 'SlideFromRight';
-
   fullName: string = '';
   title: string = '';
   summary: string = '';
   location: string = '';
   phone: string = '';
   email: string = '';
-  gap = 2;
 
-  isIntersecting: boolean = false;
-  isVisible: boolean = false;
   aboutIsCutting: boolean = false;
   educationIsCutting: boolean = false;
   projectsIsCutting: boolean = false;
   skillsIsCutting: boolean = false;
   experienceIsCutting: boolean = false;
   contactIsCutting: boolean = false;
+  aboutState: string = "OutOfView";
+  eduState: string = "OutOfView";
+  projectState: string = "OutOfView";
+  skillState: string = "OutOfView";
+  expState: string = "OutOfView";
+  contactState: string = "OutOfView";
 
   constructor(private dataService: DataService,
     private renderer: Renderer2,
@@ -99,44 +83,34 @@ export class HeroComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.initVariables();
     this.typingEffect();
-
+    this.observeSections();
   }
 
-  AboutCutting(event: boolean) {
-    this.aboutIsCutting = event;
-    if (this.aboutIsCutting) {
-      this.AboutState = 'Left';
-    }
-  }
-  EducationCutting(event: boolean) {
-    this.educationIsCutting = event;
-    if (this.educationIsCutting) {
-      this.EducationState = 'Right';
-    }
-  }
-  ProjectsCutting(event: boolean) {
-    this.projectsIsCutting = event;
-    if (this.projectsIsCutting) {
-      this.ProjectsState = 'Left';
-    }
-  }
-  SkillsCutting(event: boolean) {
-    this.skillsIsCutting = event;
-    if (this.skillsIsCutting) {
-      this.SkillsState = 'Right'
-    }
-  }
-  ExperienceCutting(event: boolean) {
-    this.experienceIsCutting = event;
-    if (this.experienceIsCutting) {
-      this.ExperienceState = 'Left';
-    }
-  }
-  ContactCutting(event: boolean) {
-    this.contactIsCutting = event;
-    if (this.contactIsCutting) {
-      this.ContactState = 'Right';
-    }
+  private observeSections(): void {
+    const options = {
+      root: null, // Observe relative to viewport
+      threshold: 0.5 // Trigger when 50% of section is visible
+    };
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          switch (sectionId) {
+            case 'about': this.aboutState = 'InView'; break;
+            case 'education': this.eduState = 'InView'; break;
+            case 'projects': this.projectState = 'InView'; break;
+            case 'skills': this.skillState = 'InView'; break;
+            case 'experience': this.expState = 'InView'; break;
+            case 'contact': this.contactState = 'InView'; break;
+          }
+        }
+      });
+    }, options);
+  
+    // Observe all sections
+    const sections = document.querySelectorAll('#about, #education, #projects, #skills, #experience, #contact');
+    sections.forEach(section => observer.observe(section));
   }
 
   private initVariables(): void {

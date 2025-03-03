@@ -1,18 +1,42 @@
 @import "@egjs/flicking-plugins/dist/flicking-plugins.css";
+
 @font-face {
     font-family: SpecialElite;
     src: url("../../assets/font/SpecialElite-Regular.ttf") format("truetype");
 }
 
-.xp{
+.glass {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: screen;
+    margin: 20px;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.091);
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+}
+
+.xp {
     font-family: SpecialElite;
     background: linear-gradient(to right, red, white);
     background-clip: text;
     color: transparent;
 }
-div{
+
+div {
     max-width: 100vw;
 }
-section{
+
+section {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer {
+    height: fit-content;
 }

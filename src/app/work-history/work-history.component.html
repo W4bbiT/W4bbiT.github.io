@@ -1,15 +1,17 @@
-<div class="p-5 text-center">
-  <h2 class="text-3xl font-bold">Experience</h2>
-  <ngx-flicking class="text-xl py-5" [options]="{circular: true, panelsPerView:1}" [plugins]="plugins">
-    
-
-    <div flicking-panel class="card-panel" *ngFor="let job of workHistory">
-      <h3 class="font-semibold my-2">{{ job.position }}</h3>
-      <p><span class="font-semibold">Company: </span>{{ job.company }}</p>
-      <p><span class="font-semibold">Duration: </span>{{ job.date }}</p>
-      <ul class="">
-        <li class="text-base" *ngFor="let responsibility of job.responsibilities">✔ {{ responsibility }}</li>
-      </ul>
-    </div>
-  </ngx-flicking>
+<div class="section">
+  <div class="p-5 text-center">
+    <h2 class="text-3xl font-bold">Experience</h2>
+    <ngx-flicking class="text-xl py-5" [options]="{circular: true}" [plugins]="plugins">
+      
+  
+      <div flicking-panel class="card-panel" *ngFor="let job of workHistory">
+        <h3 class="font-semibold my-2">{{ job.position }}</h3>
+        <p><span class="font-semibold">Company: </span>{{ job.company }}</p>
+        <p><span class="font-semibold">Duration: </span>{{ job.date }}</p>
+        <ul class="">
+          <li class="text-base" *ngFor="let responsibility of job.responsibilities">✔ {{ responsibility }}</li>
+        </ul>
+      </div>
+    </ngx-flicking>
+  </div>
 </div>

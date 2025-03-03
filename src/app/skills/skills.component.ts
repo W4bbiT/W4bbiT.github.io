@@ -1,7 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import { Plugin } from "@egjs/ngx-flicking";
-import { DataService } from '../data.service';
-import { AutoPlay } from "@egjs/flicking-plugins";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { NgxFlickingComponent, Plugin } from "@egjs/ngx-flicking";
+import { Sync } from "@egjs/flicking-plugins";
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
@@ -11,13 +10,30 @@ export class SkillsComponent implements OnInit {
   softwareSkills: string[] = [];
   generalSkills: string[] = [];
   hardwareSkills: string[] = [];
-  softwareSkillsPlugins: Plugin[] = [new AutoPlay({ duration: 2000, direction: "NEXT", stopOnHover: false })];
-  generalSkillsPlugins: Plugin[] = [new AutoPlay({ duration: 3000, direction: "NEXT", stopOnHover: false })];
-  hardwareSkillsPlugins: Plugin[] = [new AutoPlay({ duration: 4000, direction: "NEXT", stopOnHover: false })];
+  @ViewChild("flicking0", { static: true }) flicking0!: NgxFlickingComponent;
+  @ViewChild("flicking1", { static: true }) flicking1!: NgxFlickingComponent;
+  @ViewChild("flicking2", { static: true }) flicking2!: NgxFlickingComponent;
 
-  constructor(private dataService: DataService) {}
+  public plugins: Plugin[] = [];
+  constructor() { }
 
   ngOnInit(): void {
-    
+    this.plugins = [new Sync({
+      type: "camera",
+      synchronizedFlickingOptions: [
+        {
+          flicking: this.flicking0,
+          isClickable: false
+        },
+        {
+          flicking: this.flicking1,
+          isClickable: false
+        },
+        {
+          flicking: this.flicking2,
+          isClickable: false
+        }
+      ]
+    })]
   }
 }
